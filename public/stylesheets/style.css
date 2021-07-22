@@ -57,10 +57,10 @@ header img {
 .main-survey-sec {
     margin: 5px auto;
 }
-.explore-surveys, 
+/* .explore-surveys, 
 .login {
     border: 1px solid var(--fourth-purple);
-}
+} */
 
 .explore-surveys h2 {
     text-align: center;
@@ -73,6 +73,7 @@ header img {
     background-color: var(--fourth-purple);
     color:var(--fifth-white);
     padding: 2%;
+    margin-bottom: 5px;
 }
 
 .survey-box p {
@@ -84,6 +85,33 @@ header img {
     font-size: 16px;
 }
 
+button {
+    background-color: var(--secondary-orange);
+    border: 0;
+    padding: 1%;
+    color: white;
+    font-weight: bold;
+    transition: background-color .1s;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+button:hover {
+    background-color: var(--primary-grey);
+}
+
+.login h3 {
+    font-size: 18px;
+}
+
+form > div {
+    margin-bottom: 2%;
+}
+  
+form label {
+    display: block;
+}
+
 /* MAIN STYLES END */
 
 
@@ -93,5 +121,6 @@ footer {
     color: var(--secondary-orange);
     text-align: center;
     font-weight: bold;
+    padding: 2%;
 }
 /* FOOTER STYLE END */

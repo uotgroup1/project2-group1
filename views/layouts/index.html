@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../../public/stylesheets/style.css">
-    <link rel="shortcut icon" type="image/png" href="../../public/assets/images/SurveyDonkey3_colored.png">
+    <link rel="shortcut icon" type="image/png" href="../../public/assets/images/SurveyDonkey3_coloredWhite.png">
 
 </head>
 
@@ -20,7 +20,7 @@
         <h1>
             <a href="/">SURVEY DONKEY</a>
         </h1>
-        <img src="../../public/assets/images/SurveyDonkey3_colored.png" alt="">
+        <img src="../../public/assets/images/SurveyDonkey3_coloredWhite.png" alt="">
     </header>
 
     <main>
@@ -30,10 +30,24 @@
             <div class="row">
                 <div class="col-9 explore-surveys">
                     <h2>Explore Surveys</h2>
+                    <!-- SURVEY (X) probably need for loop in js-->
                     <div class="row">
-                        <!-- SURVEY (X) probably need for loop in js-->
                         <div class="survey-box">
                             <p>Survey X: <span>This survey is about your favourite dragons.</span></p>
+                            <button class="start-btn">START</button>
+                        </div>
+                    </div>
+                    <!-- SURVEY (Y) probably need for loop in js-->
+                    <div class="row">
+                        <div class="survey-box">
+                            <p>Survey Y: <span>This survey is about mythical beings.</span></p>
+                            <button class="start-btn">START</button>
+                        </div>
+                    </div>
+                    <!-- SURVEY (Z) probably need for loop in js-->
+                    <div class="row">
+                        <div class="survey-box">
+                            <p>Survey Z: <span>This survey is about what sloths do.</span></p>
                             <button class="start-btn">START</button>
                         </div>
                     </div>
@@ -41,6 +55,40 @@
 
                 <div class="col-3 login">
                     <h3>LOGIN to create surveys</h3>
+
+                    <form class="login-form">
+                        <div>
+                          <label for="email-login">email:</label>
+                          <input type="text" id="email-login" />
+                        </div>
+                        <div>
+                          <label for="password-login">password:</label>
+                          <input type="password" id="password-login" />
+                        </div>
+                        <div>
+                          <button type="submit">login</button>
+                        </div>
+                      </form>
+                      <br>
+                      <h3>First Time Here?</h3>
+
+                      <form class="signup-form">
+                        <div>
+                          <label for="username-signup">username:</label>
+                          <input type="text" id="username-signup" />
+                        </div>
+                        <div>
+                          <label for="email-signup">email:</label>
+                          <input type="text" id="email-signup" />
+                        </div>
+                        <div>
+                          <label for="password-signup">password:</label>
+                          <input type="password" id="password-signup" />
+                        </div>
+                        <div>
+                          <button type="submit">signup</button>
+                        </div>
+                      </form>
                 </div>
             </div>
         </div>

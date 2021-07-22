@@ -1,0 +1,97 @@
+:root {
+    --primary-grey: #9e9e9c;
+    --secondary-orange: #d4715b;
+    --tertiary-brown: #927767;
+    --fourth-purple: #2a243c;
+    --fifth-white: #f5f7f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* GENERAL STYLES */
+a {
+    text-decoration: none;
+}
+
+/* HEADER STYLE START */
+header {
+    background: var(--primary-grey);
+    padding: 10px 10px 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+header h1 a {
+    font-weight: normal;
+    font-size: 40px;
+    color: var(--fifth-white);
+    padding: 10px 15px 10px 50px;
+}
+
+header h1 a:hover {
+    color: var(--secondary-orange);
+}
+
+header img {
+    width: 50px;
+}
+
+/* HEADER STYLE END */
+
+
+/* MAIN STYLES START */
+.rows {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-survey-sec {
+    margin: 5px auto;
+}
+.explore-surveys, 
+.login {
+    border: 1px solid var(--fourth-purple);
+}
+
+.explore-surveys h2 {
+    text-align: center;
+}
+
+.survey-box {
+    display: flex;
+    flex: wrap;
+    justify-content: space-between;
+    background-color: var(--fourth-purple);
+    color:var(--fifth-white);
+    padding: 2%;
+}
+
+.survey-box p {
+    font-size: 22px;
+    padding-right: 5px;
+}
+
+.survey-box span {
+    font-size: 16px;
+}
+
+/* MAIN STYLES END */
+
+
+/* FOOTER STYLE START */
+footer {
+    background: var(--primary-grey);
+    color: var(--secondary-orange);
+    text-align: center;
+    font-weight: bold;
+}
+/* FOOTER STYLE END */

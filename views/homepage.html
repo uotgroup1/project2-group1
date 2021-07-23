@@ -20,6 +20,12 @@
     <h1>
       <a href="/">SURVEY DONKEY</a>
     </h1>
+    <nav>
+      {{#if loggedIn}}
+      <a href="/dashboard">dashboard</a>
+      <button id="logout" class="btn-no-style">LOGOUT</button>
+      {{/if}}
+    </nav>
     <img src="../../public/assets/images/SurveyDonkey3_coloredWhiteGreys.png" alt="">
   </header>
 
@@ -112,12 +118,15 @@
   </footer>
 
   <!-- WE NEED: 
-    - homepage.handlebars (for already made surveys to display and login)
-    - signup.handlebars (separate signup page or use js to change box)
+    - √ homepage.handlebars (for already made surveys to display and login)
     - dashboard.handlebars (users dashboard, see and create new surveys)
     - survey-post.handlebars (page to post a survey)
     - survey.handlebars - under partials? (for actual surveys to be populated)
     -->
+  <!-- TODO:
+    - when logged in, login-signup should disappear; logout button should appear
+    - when logged out, login-singup displays; logout disappears
+  -->
 
   <!-- SCRIPT FILES -->
   <!-- {{#if loggedIn}} -->

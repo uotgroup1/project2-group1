@@ -67,19 +67,25 @@ header img {
 
 .explore-surveys h2 span,
 .login-sec h3 span,
-.signup-sec h3 span {
+.signup-sec h3 span,
+.previous-surveys h2 span,
+.create-sec h3 span {
     font-size: .75em;
 }
 
-.survey-box {
+.survey-box, 
+.prev-survey-box {
     display: flex;
     flex: wrap;
-    justify-content: space-between;
     background-color: var(--fourth-pewterBlue);
     color:var(--fifth-white);
     padding: 2%;
     margin-bottom: 10px;
     box-shadow: 1px 1px 3px var(--tertiary-dgrey);
+}
+
+.survey-box {
+    justify-content: space-between;
 }
 
 .survey-box p {
@@ -89,6 +95,10 @@ header img {
 
 .survey-box span {
     font-size: 16px;
+}
+
+.prev-survey-box {
+    justify-content: space-between;
 }
 
 button {
@@ -107,14 +117,25 @@ button:hover {
     background-color: var(--tertiary-dgrey);
 }
 
-.login-signup h3 {
+.upDel-btns {
+    justify-content: space-around;
+}
+.upDel-btns button {
+    margin: 10px;
+    padding: 4%;
+}
+
+.login-signup h3,
+.create-surv h3 {
     font-size: 1.2em;
 }
 .login-signup p {
     font-size: 0.8em;
 }
 
-.login-sec, .signup-sec {
+.login-sec, 
+.signup-sec,
+.create-sec {
     border:var(--tertiary-dgrey) solid 2px;
     padding: 5%;
     box-shadow: 2px 2px 3px var(--tertiary-dgrey);
@@ -130,6 +151,26 @@ form > div {
   
 form label {
     display: block;
+}
+
+.create-surv {
+    margin: auto 0;
+}
+.create-sec {
+    text-align: center;
+}
+
+.navigation {
+    display: flex;
+    margin-left: auto;
+    padding: 0 4%;
+}
+.dashboard-btn, .logout-btn {
+    margin: 0 5% 0 0;
+}
+.dashboard-btn:hover,
+.logout-btn:hover {
+    background-color: var(--fourth-pewterBlue);
 }
 
 /* MAIN STYLES END */

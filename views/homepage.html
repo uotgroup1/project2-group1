@@ -10,7 +10,7 @@
   <!-- CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../public/stylesheets/style.css">
+  <link rel="stylesheet" href="../public/stylesheets/style.css">
   <link rel="shortcut icon" type="image/png" href="../../public/assets/images/SurveyDonkey3_coloredWhiteGreys.png">
 
 </head>
@@ -20,12 +20,12 @@
     <h1>
       <a href="/">SURVEY DONKEY</a>
     </h1>
-    <nav>
-      {{#if loggedIn}}
-      <a href="/dashboard">dashboard</a>
-      <button id="logout" class="btn-no-style">LOGOUT</button>
-      {{/if}}
-    </nav>
+    <nav class="navigation">
+      <!-- {{#if loggedIn}} -->
+      <button id="dashboard-btn" class="dashboard-btn">DASHBOARD</button>
+      <button id="logout-btn" class="logout-btn">LOGOUT</button>
+      <!-- {{/if}} -->
+  </nav>
     <img src="../../public/assets/images/SurveyDonkey3_coloredWhiteGreys.png" alt="">
   </header>
 
@@ -42,21 +42,21 @@
             <div class="row">
               <div class="survey-box">
                 <p>Survey X: <span>This survey is about your favourite dragons.</span></p>
-                <button>START</button>
+                <button id="start-btn">START</button>
               </div>
             </div>
             <!-- SURVEY (Y) probably need for loop in js-->
             <div class="row">
               <div class="survey-box">
                 <p>Survey Y: <span>This survey is about mythical beings.</span></p>
-                <button>START</button>
+                <button id="start-btn">START</button>
               </div>
             </div>
             <!-- SURVEY (Z) probably need for loop in js-->
             <div class="row">
               <div class="survey-box">
                 <p>Survey Z: <span>This survey is about what sloths do.</span></p>
-                <button>START</button>
+                <button id="start-btn">START</button>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@
                   <input type="password" id="password-login" />
                 </div>
                 <div>
-                  <button type="submit">LOGIN</button>
+                  <button type="submit" id="login-btn">LOGIN</button>
                 </div>
               </form>
             </section>
@@ -102,7 +102,7 @@
                   <input type="password" id="password-signup" />
                 </div>
                 <div>
-                  <button type="submit">SIGN UP</button>
+                  <button type="submit" id="signup-btn">SIGN UP</button>
                 </div>
               </form>
             
@@ -118,15 +118,19 @@
   </footer>
 
   <!-- WE NEED: 
-    - √ homepage.handlebars (for already made surveys to display and login)
-    - √ dashboard.handlebars (users dashboard, see and create new surveys)
-    - survey-post.handlebars (page to post a survey)
-    - survey.handlebars - under partials? (for actual surveys to be populated)
-    -->
-  <!-- TODO:
-    - when logged in, login-signup should disappear; logout button should appear
-    - when logged out, login-singup displays; logout disappears
-  -->
+- √ homepage.handlebars (for already made surveys to display and login)
+- √ dashboard.handlebars (users dashboard, see and create new surveys)
+- survey-post.handlebars (page to post a survey)
+- survey.handlebars - under partials? (for actual surveys to be populated)
+- √ update-survey.handlebars (page to update user surveys)
+-->
+
+<!-- TODO:
+- VIEWS: when logged in, login-signup should disappear; logout button should appear
+- VIEWS: when logged out, login-singup displays; logout disappears
+- JS link buttons to pages
+- JS convert to textara when clicked for editing/updating survey?
+-->
 
   <!-- SCRIPT FILES -->
   <!-- {{#if loggedIn}} -->

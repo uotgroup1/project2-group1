@@ -10,7 +10,7 @@
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../public/stylesheets/style.css">
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
     <link rel="shortcut icon" type="image/png" href="../../public/assets/images/SurveyDonkey3_coloredWhiteGreys.png">
 
 </head>
@@ -22,8 +22,8 @@
         </h1>
         <nav class="navigation">
             <!-- {{#if loggedIn}} -->
-            <button id="dashboard" class="dashboard-btn">DASHBOARD</a>
-            <button id="logout" class="logout-btn">LOGOUT</button>
+            <button id="dashboard-btn" class="dashboard-btn">DASHBOARD</a>
+            <button id="logout-btn" class="logout-btn">LOGOUT</button>
             <!-- {{/if}} -->
         </nav>
         <img src="../../public/assets/images/SurveyDonkey3_coloredWhiteGreys.png" alt="">
@@ -44,8 +44,8 @@
                                     <p>Survey X: <span>This survey is about your favourite dragons.</span></p>
                                 </div>
                                 <div class="d-flex upDel-btns">
-                                    <button>UPDATE</button>
-                                    <button>DELETE</button>
+                                    <button id="update-btn">UPDATE</button>
+                                    <button id="delete-btn">DELETE</button>
                                 </div>
                             </div>
                         </div>
@@ -56,8 +56,8 @@
                                     <p>Survey Y: <span>This survey is about mythical beings.</span></p>
                                 </div>
                                 <div class="d-flex upDel-btns">
-                                    <button>UPDATE</button>
-                                    <button>DELETE</button>
+                                    <button id="update-btn">UPDATE</button>
+                                    <button id="delete-btn">DELETE</button>
                                 </div>
                             </div>
                         </div>
@@ -68,8 +68,8 @@
                                     <p>Survey Z: <span>This survey is about what sloths do.</span></p>
                                 </div>
                                 <div class="d-flex upDel-btns">
-                                    <button>UPDATE</button>
-                                    <button>DELETE</button>
+                                    <button id="update-btn">UPDATE</button>
+                                    <button id="delete-btn">DELETE</button>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                     <div class="col-4 create-surv">
                         <section class="create-sec">
                             <h3>W<span>ANT TO</span> C<span>REATE A</span> N<span>EW</span> S<span>URVEY</span>?</h3>
-                            <button type="submit" class="newsurvey-btn">START HERE</button>
+                            <button type="submit" class="newsurvey-btn" id="start-here-btn">START HERE</button>
                         </section>
                     </div>
                 </div>
@@ -96,10 +96,12 @@
 - √ dashboard.handlebars (users dashboard, see and create new surveys)
 - survey-post.handlebars (page to post a survey)
 - survey.handlebars - under partials? (for actual surveys to be populated)
+- √ update-survey.handlebars (page to update user surveys)
 -->
     <!-- TODO:
 - when logged in, login-signup should disappear; logout button should appear
 - when logged out, login-singup displays; logout disappears
+- JS convert to textara when clicked for editing/updating survey?
 -->
 
     <!-- SCRIPT FILES -->

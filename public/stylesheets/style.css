@@ -69,12 +69,14 @@ header img {
 .login-sec h3 span,
 .signup-sec h3 span,
 .previous-surveys h2 span,
-.create-sec h3 span {
+.create-sec h3 span,
+.update-surveys h2 span {
     font-size: .75em;
 }
 
 .survey-box, 
-.prev-survey-box {
+.prev-survey-box,
+.update-survey-box {
     display: flex;
     flex: wrap;
     background-color: var(--fourth-pewterBlue);
@@ -97,8 +99,10 @@ header img {
     font-size: 16px;
 }
 
-.prev-survey-box {
+.prev-survey-box,
+.update-survey-box {
     justify-content: space-between;
+    align-items: center;
 }
 
 button {
@@ -160,6 +164,7 @@ form label {
     text-align: center;
 }
 
+/* Dashboard styles */
 .navigation {
     display: flex;
     margin-left: auto;
@@ -168,10 +173,38 @@ form label {
 .dashboard-btn, .logout-btn {
     margin: 0 5% 0 0;
 }
+
 .dashboard-btn:hover,
 .logout-btn:hover {
     background-color: var(--fourth-pewterBlue);
 }
+
+/* Update survey styles */
+.update-surveys {
+    margin: auto;
+    text-align: center;
+}
+
+.update-survey-box {
+    width: 50%;
+    margin: auto;
+}
+
+.update-surveys h3 {
+    font-size: 1.4em;
+}
+
+.questOpts p {
+    font-size: 1.2em;
+    color: var(--tertiary-dgrey)
+}
+.questOpts span {
+    font-size: .75em;
+    color: var(--fifth-white)
+}
+
+
+
 
 /* MAIN STYLES END */
 

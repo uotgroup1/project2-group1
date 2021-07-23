@@ -1,9 +1,9 @@
 :root {
-    --primary-grey: #9e9e9c;
-    --secondary-orange: #d4715b;
-    --tertiary-brown: #927767;
-    --fourth-purple: #2a243c;
-    --fifth-white: #f5f7f9;
+    --primary-grey: #c9c9c8;
+    --secondary-orange: #ef8b69;
+    --tertiary-dgrey: #3f3f3f;
+    --fourth-pewterBlue: #8ba6a9;
+    --fifth-white: #fbf7fc;
 }
 
 * {
@@ -14,6 +14,7 @@
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: var(--primary-grey);
 }
 
 /* GENERAL STYLES */
@@ -23,7 +24,7 @@ a {
 
 /* HEADER STYLE START */
 header {
-    background: var(--primary-grey);
+    background: var(--tertiary-dgrey);
     padding: 10px 10px 10px 0px;
     display: flex;
     justify-content: space-between;
@@ -35,6 +36,7 @@ header h1 a {
     font-size: 40px;
     color: var(--fifth-white);
     padding: 10px 15px 10px 50px;
+    text-shadow: 2px 2px 3px black;
 }
 
 header h1 a:hover {
@@ -55,25 +57,39 @@ header img {
 }
 
 .main-survey-sec {
-    margin: 5px auto;
+    margin-top: 3%;
 }
-/* .explore-surveys, 
-.login {
-    border: 1px solid var(--fourth-purple);
-} */
 
 .explore-surveys h2 {
     text-align: center;
+    text-shadow: 1px 1px 2px var(--tertiary-dgrey);
+}
+
+.explore-surveys h2 span,
+.login-sec h3 span,
+.signup-sec h3 span,
+.previous-surveys h2 span,
+.create-sec h3 span,
+.update-surveys h2 span,
+.create-survey h2 span {
+    font-size: .75em;
+}
+
+.survey-box, 
+.prev-survey-box,
+.update-survey-box,
+.new-survey-box {
+    display: flex;
+    flex: wrap;
+    background-color: var(--fourth-pewterBlue);
+    color:var(--fifth-white);
+    padding: 2%;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 3px var(--tertiary-dgrey);
 }
 
 .survey-box {
-    display: flex;
-    flex: wrap;
     justify-content: space-between;
-    background-color: var(--fourth-purple);
-    color:var(--fifth-white);
-    padding: 2%;
-    margin-bottom: 5px;
 }
 
 .survey-box p {
@@ -85,23 +101,54 @@ header img {
     font-size: 16px;
 }
 
+.prev-survey-box,
+.update-survey-box {
+    justify-content: space-between;
+    align-items: center;
+}
+
 button {
     background-color: var(--secondary-orange);
     border: 0;
-    padding: 1%;
-    color: white;
+    padding: 2%;
+    color: var(--fifth-white);
     font-weight: bold;
     transition: background-color .1s;
     cursor: pointer;
     border-radius: 5px;
-  }
+    margin: 1%;
+}
   
 button:hover {
-    background-color: var(--primary-grey);
+    background-color: var(--tertiary-dgrey);
 }
 
-.login h3 {
-    font-size: 18px;
+.upDel-btns {
+    justify-content: space-around;
+}
+.upDel-btns button {
+    margin: 10px;
+    padding: 4%;
+}
+
+.login-signup h3,
+.create-surv h3 {
+    font-size: 1.2em;
+}
+.login-signup p {
+    font-size: 0.8em;
+}
+
+.login-sec, 
+.signup-sec,
+.create-sec {
+    border:var(--tertiary-dgrey) solid 2px;
+    padding: 5%;
+    box-shadow: 2px 2px 3px var(--tertiary-dgrey);
+}
+
+.login-form input, .signup-form input {
+    width: 100%;
 }
 
 form > div {
@@ -112,15 +159,102 @@ form label {
     display: block;
 }
 
+.create-surv {
+    margin: auto 0;
+}
+.create-sec {
+    text-align: center;
+}
+
+/* Dashboard styles */
+.navigation {
+    display: flex;
+    margin-left: auto;
+    padding: 0 4%;
+}
+.dashboard-btn, .logout-btn {
+    margin: 0 5% 0 0;
+}
+
+.dashboard-btn:hover,
+.logout-btn:hover {
+    background-color: var(--fourth-pewterBlue);
+}
+
+/* Update survey styles */
+.update-surveys {
+    margin: auto;
+    text-align: center;
+}
+
+.update-survey-box {
+    width: 50%;
+    margin: auto;
+}
+
+.update-surveys h3 {
+    font-size: 1.4em;
+}
+
+.questOpts p {
+    font-size: 1.2em;
+    color: var(--tertiary-dgrey)
+}
+.questOpts span {
+    font-size: .75em;
+    color: var(--fifth-white)
+}
+
+/* Create new survey styles */
+.new-survey-box {
+    width: 90%;
+    margin: 2% auto 0 auto;
+}
+
+.create-survey h2 {
+    text-align: center;
+}
+.form-input {
+    border: none;
+    display: block;
+    font-size: 14px;
+    color: var(--tertiary-dgrey);
+    margin-bottom: 15px;
+    padding: 7px 15px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.75);
+}
+
+.next-steps {
+    border-left: solid 5px var(--fifth-white);
+    padding-left: 5%;
+    text-align: center;
+}
+
+.next-steps h3 {
+    font-size: 1.3em;
+}
+
+.next-steps button {
+    margin: 10% auto;
+    width: 100%;
+}
+
 /* MAIN STYLES END */
 
 
 /* FOOTER STYLE START */
 footer {
-    background: var(--primary-grey);
-    color: var(--secondary-orange);
-    text-align: center;
+    background: var(--tertiary-dgrey);
+    color: var(--fifth-white);
     font-weight: bold;
     padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 /* FOOTER STYLE END */

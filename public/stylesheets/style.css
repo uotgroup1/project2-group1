@@ -70,13 +70,15 @@ header img {
 .signup-sec h3 span,
 .previous-surveys h2 span,
 .create-sec h3 span,
-.update-surveys h2 span {
+.update-surveys h2 span,
+.create-survey h2 span {
     font-size: .75em;
 }
 
 .survey-box, 
 .prev-survey-box,
-.update-survey-box {
+.update-survey-box,
+.new-survey-box {
     display: flex;
     flex: wrap;
     background-color: var(--fourth-pewterBlue);
@@ -203,8 +205,40 @@ form label {
     color: var(--fifth-white)
 }
 
+/* Create new survey styles */
+.new-survey-box {
+    width: 90%;
+    margin: 2% auto 0 auto;
+}
 
+.create-survey h2 {
+    text-align: center;
+}
+.form-input {
+    border: none;
+    display: block;
+    font-size: 14px;
+    color: var(--tertiary-dgrey);
+    margin-bottom: 15px;
+    padding: 7px 15px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.75);
+}
 
+.next-steps {
+    border-left: solid 5px var(--fifth-white);
+    padding-left: 5%;
+    text-align: center;
+}
+
+.next-steps h3 {
+    font-size: 1.3em;
+}
+
+.next-steps button {
+    margin: 10% auto;
+    width: 100%;
+}
 
 /* MAIN STYLES END */
 

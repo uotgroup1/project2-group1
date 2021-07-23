@@ -1,9 +1,9 @@
 :root {
-    --primary-grey: #9e9e9c;
-    --secondary-orange: #d4715b;
-    --tertiary-brown: #927767;
-    --fourth-purple: #2a243c;
-    --fifth-white: #f5f7f9;
+    --primary-grey: #c9c9c8;
+    --secondary-orange: #ef8b69;
+    --tertiary-dgrey: #3f3f3f;
+    --fourth-pewterBlue: #8ba6a9;
+    --fifth-white: #fbf7fc;
 }
 
 * {
@@ -14,6 +14,7 @@
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: var(--primary-grey);
 }
 
 /* GENERAL STYLES */
@@ -23,7 +24,7 @@ a {
 
 /* HEADER STYLE START */
 header {
-    background: var(--primary-grey);
+    background: var(--tertiary-dgrey);
     padding: 10px 10px 10px 0px;
     display: flex;
     justify-content: space-between;
@@ -55,11 +56,11 @@ header img {
 }
 
 .main-survey-sec {
-    margin: 5px auto;
+    margin-top: 3%;
 }
 /* .explore-surveys, 
-.login {
-    border: 1px solid var(--fourth-purple);
+.login-signup {
+    border: 1px solid var(--fourth-pewterBlue);
 } */
 
 .explore-surveys h2 {
@@ -70,7 +71,7 @@ header img {
     display: flex;
     flex: wrap;
     justify-content: space-between;
-    background-color: var(--fourth-purple);
+    background-color: var(--fourth-pewterBlue);
     color:var(--fifth-white);
     padding: 2%;
     margin-bottom: 5px;
@@ -88,20 +89,39 @@ header img {
 button {
     background-color: var(--secondary-orange);
     border: 0;
-    padding: 1%;
-    color: white;
+    padding: 2%;
+    color: var(--fifth-white);
     font-weight: bold;
     transition: background-color .1s;
     cursor: pointer;
     border-radius: 5px;
-  }
+    margin: 1%;
+}
   
 button:hover {
-    background-color: var(--primary-grey);
+    background-color: var(--tertiary-dgrey);
 }
 
-.login h3 {
-    font-size: 18px;
+/* .login-form {
+} */
+/* .login-signup {
+    
+} */
+
+.login-signup h3 {
+    font-size: 1em;
+}
+.login-signup p {
+    font-size: 0.8em;
+}
+
+.login-sec, .signup-sec {
+    border:var(--tertiary-dgrey) solid 2px;
+    padding: 5%;
+}
+
+.login-form input, .signup-form input {
+    width: 100%;
 }
 
 form > div {
@@ -117,10 +137,16 @@ form label {
 
 /* FOOTER STYLE START */
 footer {
-    background: var(--primary-grey);
-    color: var(--secondary-orange);
-    text-align: center;
+    background: var(--tertiary-dgrey);
+    color: var(--fifth-white);
     font-weight: bold;
     padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 /* FOOTER STYLE END */

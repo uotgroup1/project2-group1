@@ -4,6 +4,11 @@ const Users = require('./Users');
 const Answers = require('./Answers');
 const UserAnswers = require('./UserAnswers');
 
+/*
+Relationships go here
+*/
+
+
 module.exports = {
   Survey,
   Questions,

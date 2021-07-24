@@ -1,8 +1,9 @@
+// import important parts of sequelize library
 const { Model, DataTypes } = require('sequelize');
+// import our database connection from config.js
+const sequelize = require('../config/connection');
 
-const sequelize = require('../config/connection.js');
-
-class Tag extends Model {}
+class UserAnswers extends Model {}
 
 UserAnswers.init(
   {

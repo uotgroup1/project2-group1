@@ -15,13 +15,25 @@ UserAnswers.init(
       primaryKey: true
     },
     question_id: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'questions',
+        key: 'id'
+      }
     },
     answer_id: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'answers',
+        key: 'id'
+      }
     },
     user_id: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'users',
+        key: 'id'
+      }
     }
   },
   {
@@ -29,7 +41,7 @@ UserAnswers.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'tag',
+    modelName: 'userAnswers',
   }
 );
 

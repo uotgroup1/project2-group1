@@ -8,7 +8,6 @@ const UserAnswers = require('./UserAnswers');
 Relationships go here
 */
 
-
 module.exports = {
   Survey,
   Questions,

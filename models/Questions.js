@@ -9,23 +9,27 @@ class Questions extends Model {}
 // set up fields and rules for Product model
 Questions.init(
   {
-   id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    autoIncrement: true,
-    primaryKey: true
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true
     },
-  survey_ID: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
+    survey_ID: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'survey',
+        key: 'id'
+      }
     },
-  question_type: {
-    type: DataTypes.INTEGER,
-    allowNull: false
+    question_type: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
-  question: {
-    type: DataTypes.STRING,
-    allowNull: false
+   question: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   },
   {
@@ -33,7 +37,7 @@ Questions.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'product',
+    modelName: 'questions',
   }
 );
 

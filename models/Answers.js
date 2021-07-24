@@ -15,10 +15,18 @@ Answers.init(
       primaryKey: true
     },
     question_id: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'questions',
+        key: 'id'
+      }
     },
     answer: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      references: {
+        model: 'answers',
+        key: 'id'
+      }
     }
   },
   {
@@ -26,7 +34,7 @@ Answers.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'tag',
+    modelName: 'answers',
   }
 );
 

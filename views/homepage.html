@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Donkey</title>
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="../public/stylesheets/style.css">
+  <link rel="shortcut icon" type="image/png" href="../../public/assets/images/SurveyDonkey3_coloredWhiteGreys.png">
+
+</head>
+
+<body>
+  <header>
+    <h1>
+      <a href="/">SURVEY DONKEY</a>
+    </h1>
+    <nav class="navigation">
+      <!-- {{#if loggedIn}} -->
+      <button id="dashboard-btn" class="dashboard-btn">DASHBOARD</button>
+      <button id="logout-btn" class="logout-btn">LOGOUT</button>
+      <!-- {{/if}} -->
+  </nav>
+    <img src="../../public/assets/images/SurveyDonkey3_coloredWhiteGreys.png" alt="">
+  </header>
+
+  <main>
+    <!-- {{{ body }}} -->
+    <!-- this would be under views/homepage.handlebars -->
+      <div class="container main-survey-sec">
+        <div class="row">
+          <div class="col-8 explore-surveys">
+            <h2>E<span>XPLORE</span> S<span>URVEYS</span></h2>
+
+            <!-- SURVEY (X) probably need for loop in js-->
+            <div class="row">
+              <div class="survey-box">
+                <p>Survey X: <span>This survey is about your favourite dragons.</span></p>
+                <button id="start-btn">START</button>
+              </div>
+            </div>
+            
+            <!-- SURVEY (Y) probably need for loop in js-->
+            <div class="row">
+              <div class="survey-box">
+                <p>Survey Y: <span>This survey is about mythical beings.</span></p>
+                <button id="start-btn">START</button>
+              </div>
+            </div>
+
+            <!-- SURVEY (Z) probably need for loop in js-->
+            <div class="row">
+              <div class="survey-box">
+                <p>Survey Z: <span>This survey is about what sloths do.</span></p>
+                <button id="start-btn">START</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- LOGIN FORM -->
+          <div class="col-4 login-signup">
+            <section class="login-sec">
+              <h3>W<span>ANT TO</span> M<span>AKE A</span> S<span>URVEY</span>?</h3>
+              <p>LOGIN HERE!</p>
+              <form class="login-form">
+                <div>
+                  <label for="email-login">Email:</label>
+                  <input type="text" id="email-login" />
+                </div>
+                <div>
+                  <label for="password-login">password:</label>
+                  <input type="password" id="password-login" />
+                </div>
+                <div>
+                  <button type="submit" id="login-btn">LOGIN</button>
+                </div>
+              </form>
+            </section>
+
+            <br>
+
+            <!-- SIGN UP FORM -->
+            <section class="signup-sec">
+              <h3>F<span>IRST</span> T<span>IME</span> H<span>ERE</span>?</h3>
+              <p>SIGN UP BELOW!</p>
+
+              <form class="signup-form">
+                <div>
+                  <label for="username-signup">Username:</label>
+                  <input type="text" id="username-signup" />
+                </div>
+                <div>
+                  <label for="email-signup">Email:</label>
+                  <input type="text" id="email-signup" />
+                </div>
+                <div>
+                  <label for="password-signup">Password:</label>
+                  <input type="password" id="password-signup" />
+                </div>
+                <div>
+                  <button type="submit" id="signup-btn">SIGN UP</button>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+  </main>
+
+  <footer>
+    &copy; survey donkey 2021
+  </footer>
+
+<!-- WE NEED: 
+- homepage.handlebars (for already made surveys to display and login)
+- dashboard.handlebars (users dashboard, see and create new surveys)
+- new-survey.handlebars (new surveys page)
+- take-survey.handlebars (page to take a survey)
+- update-survey.handlebars (page to update user survey)
+-->
+
+<!-- TODO:
+- when logged in, login-signup should disappear; logout button should appear
+- when logged out, login-singup displays; logout disappears
+- JS convert to textara when clicked for editing/updating survey?
+- JS in new-survey -> add option button; add question button
+-->
+
+  <!-- SCRIPT FILES -->
+  <!-- {{#if loggedIn}} -->
+  <!-- logged in scripts -->
+  <!-- {{/if}} -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

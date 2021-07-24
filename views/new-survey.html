@@ -35,48 +35,33 @@
             <div class="container main-survey-sec">
                 <div class="row create-survey">
                     <h2>C<span>REATE</span> N<span>EW</span> S<span>URVEY</span></h2>
+                </div>
 
-                    <div class="new-survey-box">
-                        <form class="col-8">
-                            <label for="question">Question 1:</label>
-                            <textarea name="question" id="question" class="form-input"></textarea>
+                <div class="row new-survey-box">
+                    <form class="col-8">
+                        <label for="question">Question 1:</label>
+                        <textarea name="question" id="question" class="form-input"></textarea>
 
-                            <label for="option">Option 1: </label>
-                            <input type="text" name="option" id="option" class="form-input" />
-                        </form>
-                        <div class="col-4 next-steps">
-                            <h3>What would you like to do?</h3>
-                            <button id="add-quest-btn">Add Question</button>
-                            <button id="addOpt-btn">Add Option</button>
-                            <button id="save-surv-btn">Save Survey</button>
-                        </div>
-                    </div>
-                    <div class="new-survey-box">
-                        <form class="col-8">
-                            <label for="question">Question 2:</label>
-                            <textarea name="question" id="question" class="form-input"></textarea>
-
-                            <label for="option">Option 1: </label>
-                            <input type="text" name="option" id="option" class="form-input" />
-                            <label for="option">Option 2: </label>
-                            <input type="text" name="option" id="option" class="form-input" />
-                        </form>
-                        <div class="col-4 next-steps">
-                            <h3>What would you like to do?</h3>
-                            <button id="add-quest-btn">Add Question</button>
-                            <button id="addOpt-btn">Add Option</button>
-                            <button id="save-surv-btn">Save Survey</button>
-                        </div>
+                        <label for="option">Option 1: </label>
+                        <input type="text" name="option" id="option" class="form-input" />
+                    </form>
+                    <div class="col-4 next-steps">
+                        <h3>What would you like to do?</h3>
+                        <button class="" id="add-quest-btn">Add Question</button>
+                        <button id="addOpt-btn">Add Option</button>
+                        <button id="save-surv-btn">Save Survey</button>
                     </div>
                 </div>
             </div>
+        </section>
+        <br />
     </main>
 
     <footer>
         &copy; survey donkey 2021
     </footer>
 
-<!-- WE NEED: 
+    <!-- WE NEED: 
 - homepage.handlebars (for already made surveys to display and login)
 - dashboard.handlebars (users dashboard, see and create new surveys)
 - new-survey.handlebars (new surveys page)
@@ -84,7 +69,7 @@
 - update-survey.handlebars (page to update user survey)
 -->
 
-<!-- TODO:
+    <!-- TODO:
 - when logged in, login-signup should disappear; logout button should appear
 - when logged out, login-singup displays; logout disappears
 - JS convert to textara when clicked for editing/updating survey?

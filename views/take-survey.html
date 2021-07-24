@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donkey Creates</title>
+    <title>Donkey Takes</title>
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -34,7 +34,7 @@
         <section>
             <div class="container main-survey-sec">
                 <div class="row">
-                    <h2>{{Survey Name Here}}</h2>
+                    <h2 class="survey-name">{{Survey Name Here}}</h2>
                 </div>
 
                 <!-- JS inserts users questions and option from before and loops -->
@@ -47,6 +47,7 @@
                             </p>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-6 survey-option">
                             <button class="surv-opt-btn" id="surv-opt-btn-1">{{Hungarian Horntail}}</button>
@@ -61,6 +62,7 @@
                             <button class="surv-opt-btn" id="surv-opt-btn-4">{{Puff the Magic Dragon}}</button>
                         </div>
                     </div>
+                    
                     <div class="row take-surv-btns">
                         <button class="col-3" id="prev-quest-btn">Previous Question</button>
                         <button class="col-3" id="next-quest-btn">Next Question</button>
@@ -69,6 +71,7 @@
                     </div>
                 </div>
             </div>
+        </section>
     </main>
 
     <footer>

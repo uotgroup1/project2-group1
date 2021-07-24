@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donkey Takes</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
+    <link rel="shortcut icon" type="image/png" href="../../public/assets/images/SurveyDonkey3_coloredWhiteGreys.png">
+
+</head>
+
+<body>
+    <header>
+        <h1>
+            <a href="/">SURVEY DONKEY</a>
+        </h1>
+        <nav class="navigation">
+            <!-- {{#if loggedIn}} -->
+            <button id="dashboard-btn" class="dashboard-btn">DASHBOARD</a>
+                <button id="logout-btn" class="logout-btn">LOGOUT</button>
+                <!-- {{/if}} -->
+        </nav>
+        <img src="../../public/assets/images/SurveyDonkey3_coloredWhiteGreys.png" alt="">
+    </header>
+
+    <main>
+        <!-- THIS PART WOULD GO IN dashboard.handlebars -->
+        <section>
+            <div class="container main-survey-sec">
+                <div class="row">
+                    <h2 class="survey-name">{{Survey Name Here}}</h2>
+                </div>
+
+                <!-- JS inserts users questions and option from before and loops -->
+                <!-- JS to link surv-opt-btn's with the appropriate option -->
+                <div class="row start-survey-box">
+                    <div class="row">
+                        <div class="col survey-question">
+                            <p>
+                                {{Question One: What is your favourite dragon?}}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 survey-option">
+                            <button class="surv-opt-btn" id="surv-opt-btn-1">{{Hungarian Horntail}}</button>
+                        </div>
+                        <div class="col-6 survey-option">
+                            <button class="surv-opt-btn" id="surv-opt-btn-2">{{Chinese Firebolt}}</button>
+                        </div>
+                        <div class="col-6 survey-option">
+                            <button class="surv-opt-btn" id="surv-opt-btn-3">{{Norwegian Ridgeback}}</button>
+                        </div>
+                        <div class="col-6 survey-option">
+                            <button class="surv-opt-btn" id="surv-opt-btn-4">{{Puff the Magic Dragon}}</button>
+                        </div>
+                    </div>
+                    
+                    <div class="row take-surv-btns">
+                        <button class="col-3" id="prev-quest-btn">Previous Question</button>
+                        <button class="col-3" id="next-quest-btn">Next Question</button>
+                        <!-- JS finish should only appear at the end of the survey? -->
+                        <button class="col-3" id="finish-surv-btn">Finish</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; survey donkey 2021
+    </footer>
+
+<!-- WE NEED: 
+- homepage.handlebars (for already made surveys to display and login)
+- dashboard.handlebars (users dashboard, see and create new surveys)
+- new-survey.handlebars (new surveys page)
+- take-survey.handlebars (page to take a survey)
+- update-survey.handlebars (page to update user survey)
+-->
+
+<!-- TODO:
+- when logged in, login-signup should disappear; logout button should appear
+- when logged out, login-singup displays; logout disappears
+- JS convert to textara when clicked for editing/updating survey?
+- JS in new-survey -> add option button; add question button
+-->
+
+    <!-- SCRIPT FILES -->
+    <!-- {{#if loggedIn}} -->
+    <!-- logged in scripts -->
+    <!-- {{/if}} -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

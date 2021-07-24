@@ -240,6 +240,32 @@ form label {
     width: 100%;
 }
 
+/* Take survey styles */
+.start-survey-box {
+    background-color: var(--fourth-pewterBlue);
+    color:var(--fifth-white);
+    padding: 2%;
+    margin: 10px auto;
+    box-shadow: 1px 1px 3px var(--tertiary-dgrey);
+}
+
+.survey-question {
+    font-size: 1.5em;
+}
+
+.take-surv-btns {
+    justify-content: space-between;
+    margin: 5% auto 0 auto;
+}
+
+.surv-opt-btn {
+    background-color: var(--tertiary-dgrey);
+}
+
+.surv-opt-btn:hover {
+    background-color: var(--primary-grey);
+    color: var(--tertiary-dgrey);
+}
 /* MAIN STYLES END */
 
 

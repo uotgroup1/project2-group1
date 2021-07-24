@@ -1,6 +1,10 @@
 const path = require('path');
 const express = require('express');
+<<<<<<< HEAD
 const exphbs = require('express-handlebars');
+=======
+const sequelize = require('./config/connection')
+>>>>>>> daf11bef4f4de424896f8a85dce8e960c4a6b641
 
 const app = express();
 const PORT = process.env.PORT || 3001;

@@ -32,12 +32,11 @@
   <main>
     <!-- {{{ body }}} -->
     <!-- this would be under views/homepage.handlebars -->
-    <div>
-
       <div class="container main-survey-sec">
         <div class="row">
           <div class="col-8 explore-surveys">
             <h2>E<span>XPLORE</span> S<span>URVEYS</span></h2>
+
             <!-- SURVEY (X) probably need for loop in js-->
             <div class="row">
               <div class="survey-box">
@@ -45,6 +44,7 @@
                 <button id="start-btn">START</button>
               </div>
             </div>
+            
             <!-- SURVEY (Y) probably need for loop in js-->
             <div class="row">
               <div class="survey-box">
@@ -52,6 +52,7 @@
                 <button id="start-btn">START</button>
               </div>
             </div>
+
             <!-- SURVEY (Z) probably need for loop in js-->
             <div class="row">
               <div class="survey-box">
@@ -105,31 +106,29 @@
                   <button type="submit" id="signup-btn">SIGN UP</button>
                 </div>
               </form>
-            
             </section>
           </div>
         </div>
       </div>
-    </div>
   </main>
 
   <footer>
     &copy; survey donkey 2021
   </footer>
 
-  <!-- WE NEED: 
-- √ homepage.handlebars (for already made surveys to display and login)
-- √ dashboard.handlebars (users dashboard, see and create new surveys)
-- survey-post.handlebars (page to post a survey)
-- survey.handlebars - under partials? (for actual surveys to be populated)
-- √ update-survey.handlebars (page to update user surveys)
+<!-- WE NEED: 
+- homepage.handlebars (for already made surveys to display and login)
+- dashboard.handlebars (users dashboard, see and create new surveys)
+- new-survey.handlebars (new surveys page)
+- take-survey.handlebars (page to take a survey)
+- update-survey.handlebars (page to update user survey)
 -->
 
 <!-- TODO:
-- VIEWS: when logged in, login-signup should disappear; logout button should appear
-- VIEWS: when logged out, login-singup displays; logout disappears
-- JS link buttons to pages
+- when logged in, login-signup should disappear; logout button should appear
+- when logged out, login-singup displays; logout disappears
 - JS convert to textara when clicked for editing/updating survey?
+- JS in new-survey -> add option button; add question button
 -->
 
   <!-- SCRIPT FILES -->

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donkey Creates</title>
+    <title>Donkey Takes</title>
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -33,38 +33,52 @@
         <!-- THIS PART WOULD GO IN dashboard.handlebars -->
         <section>
             <div class="container main-survey-sec">
-                <div class="row create-survey">
-                    <h2>C<span>REATE</span> N<span>EW</span> S<span>URVEY</span></h2>
+                <div class="row">
+                    <h2 class="survey-name">{{Survey Name Here}}</h2>
                 </div>
 
-                <div class="row new-survey-box">
-                    <form class="col-8">
-                        <label for="surv-name">Enter your survey name: </label>
-                        <input type="text" name="surv-name" id="surv-name" class="form-input" />
+                <!-- JS inserts users questions and option from before and loops -->
+                <!-- JS to link surv-opt-btn's with the appropriate option -->
+                <div class="row start-survey-box">
+                    <div class="row">
+                        <div class="col survey-question">
+                            <p>
+                                {{Question One: What is your favourite dragon?}}
+                            </p>
+                        </div>
+                    </div>
 
-                        <label for="question">Question 1:</label>
-                        <textarea name="question" id="question" class="form-input"></textarea>
-
-                        <label for="option">Option 1: </label>
-                        <input type="text" name="option" id="option" class="form-input" />
-                    </form>
-                    <div class="col-4 next-steps">
-                        <h3>What would you like to do?</h3>
-                        <button class="" id="add-quest-btn">Add Question</button>
-                        <button id="addOpt-btn">Add Option</button>
-                        <button id="save-surv-btn">Save Survey</button>
+                    <div class="row">
+                        <div class="col-6 survey-option">
+                            <button class="surv-opt-btn" id="surv-opt-btn-1">{{Hungarian Horntail}}</button>
+                        </div>
+                        <div class="col-6 survey-option">
+                            <button class="surv-opt-btn" id="surv-opt-btn-2">{{Chinese Firebolt}}</button>
+                        </div>
+                        <div class="col-6 survey-option">
+                            <button class="surv-opt-btn" id="surv-opt-btn-3">{{Norwegian Ridgeback}}</button>
+                        </div>
+                        <div class="col-6 survey-option">
+                            <button class="surv-opt-btn" id="surv-opt-btn-4">{{Puff the Magic Dragon}}</button>
+                        </div>
+                    </div>
+                    
+                    <div class="row take-surv-btns">
+                        <button class="col-3" id="prev-quest-btn">Previous Question</button>
+                        <button class="col-3" id="next-quest-btn">Next Question</button>
+                        <!-- JS finish should only appear at the end of the survey? -->
+                        <button class="col-3" id="finish-surv-btn">Finish</button>
                     </div>
                 </div>
             </div>
         </section>
-        <br />
     </main>
 
     <footer>
         &copy; survey donkey 2021
     </footer>
 
-    <!-- WE NEED: 
+<!-- WE NEED: 
 - homepage.handlebars (for already made surveys to display and login)
 - dashboard.handlebars (users dashboard, see and create new surveys)
 - new-survey.handlebars (new surveys page)
@@ -72,7 +86,7 @@
 - update-survey.handlebars (page to update user survey)
 -->
 
-    <!-- TODO:
+<!-- TODO:
 - when logged in, login-signup should disappear; logout button should appear
 - when logged out, login-singup displays; logout disappears
 - JS convert to textara when clicked for editing/updating survey?

@@ -12,9 +12,15 @@
     box-sizing: border-box;
 }
 
+/* html {
+    position: relative;
+    min-height: 100%;
+} */
+
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: var(--primary-grey);
+    /* margin-bottom: 60px; */
 }
 
 /* GENERAL STYLES */
@@ -160,7 +166,7 @@ form label {
 }
 
 .create-surv {
-    margin: auto 0;
+    margin: 80px auto;
 }
 .create-sec {
     text-align: center;
@@ -189,7 +195,7 @@ form label {
 
 .update-survey-box {
     width: 50%;
-    margin: auto;
+    margin: 10px auto;
 }
 
 .update-surveys h3 {
@@ -236,10 +242,40 @@ form label {
 }
 
 .next-steps button {
-    margin: 10% auto;
+    margin: 2% auto;
     width: 100%;
 }
 
+/* Take survey styles */
+.survey-name {
+    text-align: center;
+}
+.start-survey-box {
+    background-color: var(--fourth-pewterBlue);
+    color:var(--fifth-white);
+    padding: 2%;
+    margin: 10px auto;
+    box-shadow: 1px 1px 3px var(--tertiary-dgrey);
+    width: 75%;
+}
+
+.survey-question {
+    font-size: 1.5em;
+}
+
+.take-surv-btns {
+    justify-content: space-between;
+    margin: 5% auto 0 auto;
+}
+
+.surv-opt-btn {
+    background-color: var(--tertiary-dgrey);
+}
+
+.surv-opt-btn:hover {
+    background-color: var(--primary-grey);
+    color: var(--tertiary-dgrey);
+}
 /* MAIN STYLES END */
 
 
@@ -248,13 +284,12 @@ footer {
     background: var(--tertiary-dgrey);
     color: var(--fifth-white);
     font-weight: bold;
-    padding: 2%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    position: fixed;
-    left: 0;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
+
 /* FOOTER STYLE END */

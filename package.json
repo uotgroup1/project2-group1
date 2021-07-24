@@ -1,5 +1,6 @@
 {
   "name": "project2-group1",
+<<<<<<< HEAD
   "description": "",
   "version": "1.0.0",
   "main": "server.js",
@@ -7,12 +8,23 @@
     "test": "jest",
     "start": "node server.js",
     "seeds": "node seeds/index.js"
+=======
+  "version": "1.0.0",
+  "description": "abdul testing",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+>>>>>>> Farnoush
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/uotgroup1/project2-group1.git"
   },
+<<<<<<< HEAD
   "keywords": [],
+=======
+>>>>>>> Farnoush
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -20,6 +32,7 @@
   },
   "homepage": "https://github.com/uotgroup1/project2-group1#readme",
   "dependencies": {
+<<<<<<< HEAD
     "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -28,5 +41,9 @@
   },
   "devDependencies": {
     "jest": "^27.0.6"
+=======
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2"
+>>>>>>> Farnoush
   }
 }

@@ -6,7 +6,11 @@ const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 
 // Initialize Product model (table) by extending off Sequelize's Model class
-class Users extends Model {}
+class Users extends Model {
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
+  }
+}
 
 // set up fields and rules for Product model
 Users.init(
@@ -38,6 +42,19 @@ Users.init(
   },
   {
     // add hoooks here for password encryption
+    hooks: {
+      async beforeCreate(newUserData) {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+      async beforeUpdate(updatedUserData) {
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
+          10
+        );
+        return updatedUserData;
+      },
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,

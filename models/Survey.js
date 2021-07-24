@@ -43,4 +43,3 @@ Survey.init(
 );
 
 module.exports = Survey;
-

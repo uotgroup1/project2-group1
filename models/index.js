@@ -5,7 +5,7 @@ const Answers = require('./Answers');
 const UserAnswers = require('./UserAnswers');
 
 /*
-
+Relationships go here
 */
 
 module.exports = {
@@ -13,5 +13,5 @@ module.exports = {
   Questions,
   Users,
   Answers,
-  UserAnswers
+  UserAnswers,
 };

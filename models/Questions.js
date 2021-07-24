@@ -15,7 +15,7 @@ Questions.init(
       autoIncrement: true,
       primaryKey: true
     },
-    survey_ID: {
+    survey_id: {
       type:DataTypes.INTEGER,
       allowNull: false,
       references: {

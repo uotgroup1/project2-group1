@@ -16,6 +16,7 @@ UserAnswers.init(
     },
     question_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'questions',
         key: 'id'
@@ -23,6 +24,7 @@ UserAnswers.init(
     },
     answer_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'answers',
         key: 'id'
@@ -30,6 +32,7 @@ UserAnswers.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'users',
         key: 'id'

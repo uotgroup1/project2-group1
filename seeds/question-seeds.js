@@ -2,12 +2,12 @@ const { Questions } = require('../models');
 
 const userQuestions = [
   {
-    survey_ID: 1,
+    survey_id: 1,
     question_type: "mcq",
     question: "what your favourite browser",
   },
   {
-    survey_ID: 1,
+    survey_id: 1,
     question_type: "mcq",
     question: "what your favourite drink",
   }

@@ -41,7 +41,7 @@ UserAnswers.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'userAnswers',
+    modelName: 'useranswers',
   }
 );
 

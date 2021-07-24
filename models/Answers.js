@@ -9,24 +9,22 @@ Answers.init(
   {
  // Model attributes are defined here
     id: {
-      type: DataTypes.INTEGER,
+      type:DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
       primaryKey: true
     },
     question_id: {
-      type: DataTypes.INTEGER,
+      type:DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'questions',
         key: 'id'
       }
     },
     answer: {
-      type: DataTypes.STRING,
-      references: {
-        model: 'answers',
-        key: 'id'
-      }
+      type:DataTypes.STRING,
+      allowNull: false,
     }
   },
   {

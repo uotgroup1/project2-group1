@@ -5,32 +5,15 @@
 
             <!-- SURVEY (X) probably need for loop in js-->
             <div class="row">
-                 {{#each posts as |post|}}
+                {{#each surveys as |survey|}}
               <div class="survey-box">
-                <p> {{post.title}}: <span> {{post.description}}</span></p>
-                <button id="start-btn">START</button>
+                <p> {{survey.title}}: <span> {{survey.description}}</span></p>
+                <button id="start-btn" onclick="/homepage/takesurvey/{{survey.id}}">START</button>
               </div>
               {{/each}}
             </div>
             
-            {{!-- <!-- SURVEY (Y) probably need for loop in js-->
-            <div class="row">
-              <div class="survey-box">
-                <p>Survey Y: <span>This survey is about mythical beings.</span></p>
-                <button id="start-btn">START</button>
-              </div>
-            </div>
 
-            <!-- SURVEY (Z) probably need for loop in js-->
-            <div class="row">
-              <div class="survey-box">
-                <p>Survey Z: <span>This survey is about what sloths do.</span></p>
-                <button id="start-btn">START</button>
-              </div>
-            </div>
-          </div>
-           --}}
-           
           <!-- LOGIN FORM -->
           <div class="col-4 login-signup">
             <section class="login-sec">

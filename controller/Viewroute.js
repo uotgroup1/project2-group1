@@ -2,9 +2,9 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Answers, Questions, Survey, Users, UserAnswers } = require('../models');
 
-// get all posts for homepage
+// get all surveys for homepage
 router.get('/', (req, res) => {
-  // Send all of the books to 'homepage.handlebars' as an object
+  // Send all of the surveys to 'homepage.handlebars' as an object
   Survey.findAll({
     attributes: [
       'id',

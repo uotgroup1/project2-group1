@@ -13,13 +13,30 @@ Questions.init(
       type:DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
+<<<<<<< HEAD
+      primaryKey: true,
+=======
       primaryKey: true
+>>>>>>> daf11bef4f4de424896f8a85dce8e960c4a6b641
     },
     survey_id: {
       type:DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'survey',
+<<<<<<< HEAD
+        key: 'id',
+      },
+    },
+    question_type: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    question: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+=======
         key: 'id'
       }
     },
@@ -31,6 +48,7 @@ Questions.init(
       type:DataTypes.STRING,
       allowNull: false
     }
+>>>>>>> daf11bef4f4de424896f8a85dce8e960c4a6b641
   },
   {
     sequelize,

@@ -6,15 +6,11 @@ const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 
 // Initialize Product model (table) by extending off Sequelize's Model class
-<<<<<<< HEAD
 class Users extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-=======
-class Users extends Model {}
->>>>>>> daf11bef4f4de424896f8a85dce8e960c4a6b641
 
 // set up fields and rules for Product model
 Users.init(
@@ -23,37 +19,26 @@ Users.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-<<<<<<< HEAD
       primaryKey: true,
     },
     user_name: {
       type: DataTypes.STRING,
-      allowNull: false,
-=======
-      primaryKey: true
->>>>>>> daf11bef4f4de424896f8a85dce8e960c4a6b641
+      allowNull: false
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-<<<<<<< HEAD
+      validate
         isEmail: true,
       },
-=======
-        isEmail: true
-      }
-    },
     user_name: {
       type: DataTypes.STRING,
       allowNull: false
->>>>>>> daf11bef4f4de424896f8a85dce8e960c4a6b641
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-<<<<<<< HEAD
         len: [8], //Not sure what the length should be set it as 8
       },
     },
@@ -73,14 +58,11 @@ Users.init(
         return updatedUserData;
       },
     },
-=======
         len: [8] //Not sure what the length should be set it as 8
       }
     }
   },
   {
-    // add hoooks here for password encryption
->>>>>>> daf11bef4f4de424896f8a85dce8e960c4a6b641
     sequelize,
     timestamps: false,
     freezeTableName: true,
@@ -89,8 +71,5 @@ Users.init(
   }
 );
 
-<<<<<<< HEAD
 module.exports = Users;
-=======
-module.exports = Users;
->>>>>>> daf11bef4f4de424896f8a85dce8e960c4a6b641
+

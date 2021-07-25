@@ -10,7 +10,7 @@ class Questions extends Model {}
 Questions.init(
   {
     id: {
-      type: DataTypes.INTEGER,
+      type:DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
 <<<<<<< HEAD
@@ -19,8 +19,8 @@ Questions.init(
       primaryKey: true
 >>>>>>> daf11bef4f4de424896f8a85dce8e960c4a6b641
     },
-    survey_ID: {
-      type: DataTypes.INTEGER,
+    survey_id: {
+      type:DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'survey',
@@ -41,11 +41,11 @@ Questions.init(
       }
     },
     question_type: {
-      type: DataTypes.INTEGER,
+      type:DataTypes.STRING,
       allowNull: false
     },
    question: {
-      type: DataTypes.STRING,
+      type:DataTypes.STRING,
       allowNull: false
     }
 >>>>>>> daf11bef4f4de424896f8a85dce8e960c4a6b641

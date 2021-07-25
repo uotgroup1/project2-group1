@@ -1,5 +1,3 @@
-// Dependencies
-// =============================================================
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const {
@@ -9,9 +7,6 @@ const {
   Users,
   UserAnswers,
 } = require('../../models');
-
-// Routes
-// =============================================================
 
 // GET route for getting all of the surveys
 router.get('/', (req, res) => {
@@ -44,6 +39,7 @@ router.get('/:id', (req, res) => {
     res.json(dbPost);
   });
 });
+
 router.delete('/:id', (req, res) => {
   console.log('id', req.params.id);
   Survey.destroy({

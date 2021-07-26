@@ -11,26 +11,27 @@ Survey.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     description: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     start_date: {
-      type: DataTypes.DATE
+      type: DataTypes.DATE,
     },
     end_date: {
-      type: DataTypes.DATE
+      type: DataTypes.DATE,
     },
     is_active: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
-    }
+      allowNull: false,
+      defaultValue: true,
+    },
   },
   {
     sequelize,
@@ -42,4 +43,3 @@ Survey.init(
 );
 
 module.exports = Survey;
-

@@ -12,17 +12,18 @@ UserAnswers.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
     },
     question_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'questions',
-        key: 'id'
-      }
+        key: 'id',
     },
     answer_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'answers',
         key: 'id'
@@ -30,6 +31,7 @@ UserAnswers.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'users',
         key: 'id'
@@ -41,8 +43,9 @@ UserAnswers.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'userAnswers',
+    modelName: 'useranswers',
   }
 );
 
 module.exports = UserAnswers;
+

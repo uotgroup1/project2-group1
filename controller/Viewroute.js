@@ -4,32 +4,32 @@ const { Answers, Questions, Survey, Users, UserAnswers } = require('../models');
 
 // get all surveys for homepage
 router.get('/', (req, res) => {
-  res.render('homepage');
-  // Send all of the surveys to 'homepage.handlebars' as an object
-  // Survey.findAll({
-  //   attributes: [
-  //     'id',
-  //     'user_id',
-  //     'description',
-  //     'start_date',
-  //     'end_date',
-  //     'is_active',
-  //   ]
-  // }
-  // )
-  //   .then((dbPostData) => {
-  //     console.log('bbbbbbbbbbbbbbbb', dbPostData);
-  //     const posts = dbPostData.map((post) => post.get({ plain: true }));
-  //     console.log('aaaaaaaaaaaa', posts);
-  //     res.render('homepage', {
-  //       posts,
-  //       loggedIn: req.session.loggedIn,
-  //     });
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //     res.status(500).json(err);
-  //   });
+  // res.render('homepage');
+  //Send all of the surveys to 'homepage.handlebars' as an object
+  Survey.findAll({
+    attributes: [
+      'id',
+      'user_id',
+      'description',
+      'start_date',
+      'end_date',
+      'is_active',
+    ]
+  }
+  )
+    .then((dbPostData) => {
+      console.log('bbbbbbbbbbbbbbbb', dbPostData);
+      const posts = dbPostData.map((post) => post.get({ plain: true }));
+      console.log('aaaaaaaaaaaa', posts);
+      res.render('homepage', {
+        posts,
+       // loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 router.get('/login', (req, res) => {

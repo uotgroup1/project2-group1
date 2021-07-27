@@ -7,7 +7,7 @@ class UserAnswers extends Model {}
 
 UserAnswers.init(
   {
- // Model attributes are defined here
+    // Model attributes are defined here
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -35,6 +35,7 @@ UserAnswers.init(
       references: {
         model: 'users',
         key: 'id'
+        }
       }
     }
   },

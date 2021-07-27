@@ -7,7 +7,6 @@ const sequelize = require('./config/connection')
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const sequelize = require('./config/connection');
 // Set Handlebars as the default template engine.
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');

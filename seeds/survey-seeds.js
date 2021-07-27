@@ -3,11 +3,11 @@ const { Survey } = require('../models');
 const userSurvey = [
   {
     user_id: 1,
-    description: "Chrome",
+    description: "what your favourite browser",
   },
   {
     user_id: 2,
-    description: "Hello",
+    description: "what your favourite food",
   }
 ];
 

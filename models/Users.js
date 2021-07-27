@@ -28,9 +28,10 @@ Users.init(
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate
-        isEmail: true,
-      },
+      validate:{
+        isEmail: true
+      }
+    },
     user_name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -52,17 +53,10 @@ Users.init(
       },
       async beforeUpdate(updatedUserData) {
         updatedUserData.password = await bcrypt.hash(
-          updatedUserData.password,
-          10
-        );
+          updatedUserData.password,10);
         return updatedUserData;
-      },
-    },
-        len: [8] //Not sure what the length should be set it as 8
       }
-    }
-  },
-  {
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,

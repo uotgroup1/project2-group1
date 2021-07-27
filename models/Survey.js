@@ -11,6 +11,7 @@ Survey.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
+<<<<<<< HEAD
       primaryKey: true
     },
     user_id: {
@@ -26,12 +27,34 @@ Survey.init(
     },
     end_date: {
       type: DataTypes.DATE
+=======
+      primaryKey: true,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    start_date: {
+      type: DataTypes.DATE,
+    },
+    end_date: {
+      type: DataTypes.DATE,
+>>>>>>> farnoush
     },
     is_active: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+<<<<<<< HEAD
       defaultValue: true
     }
+=======
+      defaultValue: true,
+    },
+>>>>>>> farnoush
   },
   {
     sequelize,
@@ -43,4 +66,7 @@ Survey.init(
 );
 
 module.exports = Survey;
+<<<<<<< HEAD
 
+=======
+>>>>>>> farnoush

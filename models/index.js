@@ -13,5 +13,5 @@ module.exports = {
   Questions,
   Users,
   Answers,
-  UserAnswers
+  UserAnswers,
 };

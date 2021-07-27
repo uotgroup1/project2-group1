@@ -10,6 +10,7 @@ class Questions extends Model {}
 Questions.init(
   {
     id: {
+<<<<<<< HEAD
       type:DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
@@ -31,6 +32,29 @@ Questions.init(
       type:DataTypes.STRING,
       allowNull: false
     }
+=======
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    survey_ID: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'survey',
+        key: 'id',
+      },
+    },
+    question_type: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    question: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+>>>>>>> farnoush
   },
   {
     sequelize,

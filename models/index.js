@@ -13,10 +13,5 @@ module.exports = {
   Questions,
   Users,
   Answers,
-<<<<<<< HEAD
-  UserAnswers,
-};
-=======
   UserAnswers
 };
->>>>>>> daf11bef4f4de424896f8a85dce8e960c4a6b641

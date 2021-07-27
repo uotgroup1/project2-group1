@@ -1,13 +1,5 @@
 {
   "name": "project2-group1",
-<<<<<<< HEAD
-  "version": "1.0.0",
-  "description": "abdul testing",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-=======
   "description": "",
   "version": "1.0.0",
   "main": "server.js",
@@ -15,16 +7,12 @@
     "test": "jest",
     "start": "node server.js",
     "seeds": "node seeds/index.js"
->>>>>>> daf11bef4f4de424896f8a85dce8e960c4a6b641
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/uotgroup1/project2-group1.git"
   },
-<<<<<<< HEAD
-=======
   "keywords": [],
->>>>>>> daf11bef4f4de424896f8a85dce8e960c4a6b641
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -32,7 +20,6 @@
   },
   "homepage": "https://github.com/uotgroup1/project2-group1#readme",
   "dependencies": {
-<<<<<<< HEAD
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^10.0.0",
@@ -40,15 +27,10 @@
     "express-handlebars": "^5.3.2",
     "express-session": "^1.17.2",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.6.5"
-=======
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "mysql2": "^2.2.5",
-    "sequelize": "^6.6.5"
+    "sequelize": "^6.6.5",
+    "handlebars": "^4.7.7"
   },
   "devDependencies": {
     "jest": "^27.0.6"
->>>>>>> daf11bef4f4de424896f8a85dce8e960c4a6b641
   }
 }

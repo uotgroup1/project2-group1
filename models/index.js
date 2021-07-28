@@ -31,13 +31,13 @@ Answers.belongsTo(Questions,{
 
 Questions.belongsToMany(Answers, {
   through: UserAnswers,
-  as: 'voted_posts',
+ 
   foreignKey: 'question_id',
 });
 
 Answers.belongsToMany(Questions, {
   through: UserAnswers,
-  as: 'voted_posts',
+  
   foreignKey: 'answer_id',
 });
 

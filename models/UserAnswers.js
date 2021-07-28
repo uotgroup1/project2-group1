@@ -20,8 +20,14 @@ UserAnswers.init(
       references: {
         model: 'questions',
         key: 'id',
+<<<<<<< HEAD
       },
     },
+=======
+    }
+  }
+    ,
+>>>>>>> develop
     answer_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

@@ -31,7 +31,11 @@ Users.init(
       validate: {
         isEmail: true,
       },
+<<<<<<< HEAD
     },
+=======
+    },  
+>>>>>>> develop
     user_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -43,6 +47,14 @@ Users.init(
         len: [8], //Not sure what the length should be set it as 8
       },
     },
+  },
+   
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'users',
   },
   {
     sequelize: sequelize,
@@ -66,7 +78,13 @@ Users.init(
         return updatedUserData;
       },
     },
+<<<<<<< HEAD
   }
+=======
+       
+    },
+ 
+>>>>>>> develop
 );
 
 module.exports = Users;

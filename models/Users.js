@@ -23,17 +23,18 @@ Users.init(
     },
     user_name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate
+      validate: {
         isEmail: true,
       },
+    },
     user_name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     password: {
       type: DataTypes.STRING,
@@ -42,6 +43,13 @@ Users.init(
         len: [8], //Not sure what the length should be set it as 8
       },
     },
+  },
+  {
+    sequelize: sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'users',
   },
   {
     // add hoooks here for password encryption
@@ -58,18 +66,7 @@ Users.init(
         return updatedUserData;
       },
     },
-        len: [8] //Not sure what the length should be set it as 8
-      }
-    }
-  },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'users',
   }
 );
 
 module.exports = Users;
-

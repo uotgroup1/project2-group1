@@ -13,16 +13,15 @@ router.get('/', (req, res) => {
       'start_date',
       'end_date',
       'is_active',
-    ]
-  }
-  )
+    ],
+  })
     .then((dbPostData) => {
       console.log('bbbbbbbbbbbbbbbb', dbPostData);
       const posts = dbPostData.map((post) => post.get({ plain: true }));
       console.log('aaaaaaaaaaaa', posts);
       res.render('homepage', {
         posts,
-        loggedIn: req.session.loggedIn,
+        loggedIn: req.session ? req.session.loggedIn : false,
       });
     })
     .catch((err) => {

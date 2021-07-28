@@ -10,4 +10,4 @@ else {
     alert(response.statusText)//if not ok then return a alert
 }
 }
-document.querySelector('.logout-btn').addEventListener('.logout-btn', logoutHandler)
+document.querySelector('.logout-btn').addEventListener('click', logoutHandler)

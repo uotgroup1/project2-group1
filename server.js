@@ -11,7 +11,6 @@ const hbs = exphbs.create({});
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-
 // Set Handlebars as the default template engine.
 // app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 // app.set('view engine', 'handlebars');
@@ -26,7 +25,7 @@ app.set('view engine', 'handlebars');
 
 //-------------------------------------------------------------------------------
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SESS_PW,
   cookie: {},
   resave: false,
   saveUninitialized: true,

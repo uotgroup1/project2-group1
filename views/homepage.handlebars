@@ -7,8 +7,8 @@
             <div class="row">
                 {{#each surveys as |survey|}}
               <div class="survey-box">
-                <p> {{survey.title}}: <span> {{survey.description}}</span></p>
-                <button id="start-btn" onclick="/homepage/takesurvey/{{survey.id}}">START</button>
+                <p> {{id}}: <span> {{description}}</span></p>
+                <button id="start-btn" onclick="/homepage/takesurvey/{{id}}">START</button>
               </div>
               {{/each}}
             </div>
@@ -62,3 +62,5 @@
           </div>
         </div>
       </div>
+
+      <script src="/javascript/login.js"></script>

@@ -31,11 +31,7 @@ Users.init(
       validate: {
         isEmail: true,
       },
-<<<<<<< HEAD
     },
-=======
-    },  
->>>>>>> develop
     user_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -48,7 +44,7 @@ Users.init(
       },
     },
   },
-   
+
   {
     sequelize,
     timestamps: false,
@@ -78,13 +74,7 @@ Users.init(
         return updatedUserData;
       },
     },
-<<<<<<< HEAD
   }
-=======
-       
-    },
- 
->>>>>>> develop
 );
 
 module.exports = Users;

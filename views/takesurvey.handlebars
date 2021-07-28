@@ -32,12 +32,13 @@
                          --}}
 
                          <select>
-                             {{#select survey}}
-                                 <option>Option 1</option>
-                                 <option>Option 2</option>
-                                 <option value="Option 3">Option 3</option>
-                                 <option value="Option 4">Option 4</option>
-                              {{/select}}
+                    {{#each survey }}
+                     <p>Survey: <span>{{ survey }}</span></p>
+                     <input class="form-control" type="text" id="comment" > 
+                     <button class="btn small btn-success btn-savecomment" class="take-survey">Take Survey</button>
+                     
+                     
+                    {{/each}}
                         </select>
                     </div>
                     

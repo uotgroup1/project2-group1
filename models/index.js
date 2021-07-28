@@ -30,13 +30,13 @@ Answers.belongsTo(Questions, {
 
 Questions.belongsToMany(Answers, {
   through: UserAnswers,
- 
+
   foreignKey: 'question_id',
 });
 
 Answers.belongsToMany(Questions, {
   through: UserAnswers,
-  
+
   foreignKey: 'answer_id',
 });
 

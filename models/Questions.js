@@ -11,6 +11,7 @@ Questions.init(
   {
     id: {
 <<<<<<< HEAD
+<<<<<<< HEAD
       type:DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
@@ -36,10 +37,15 @@ Questions.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
+=======
+      type:DataTypes.INTEGER,
+      allowNull: false,
+      autoIncrement: true,
+>>>>>>> refs/remotes/origin/database
       primaryKey: true,
     },
-    survey_ID: {
-      type: DataTypes.INTEGER,
+    survey_id: {
+      type:DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'survey',
@@ -54,7 +60,10 @@ Questions.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+<<<<<<< HEAD
 >>>>>>> farnoush
+=======
+>>>>>>> refs/remotes/origin/database
   },
   {
     sequelize,

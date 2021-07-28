@@ -23,14 +23,18 @@ Users.init(
     },
     user_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isEmail: true,
-      },
+      validate:{
+        isEmail: true
+      }
+    },
+    user_name: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     password: {
       type: DataTypes.STRING,
@@ -49,11 +53,9 @@ Users.init(
       },
       async beforeUpdate(updatedUserData) {
         updatedUserData.password = await bcrypt.hash(
-          updatedUserData.password,
-          10
-        );
+          updatedUserData.password,10);
         return updatedUserData;
-      },
+      }
     },
     sequelize,
     timestamps: false,

@@ -2,9 +2,10 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Answers, Questions, Survey, Users, UserAnswers } = require('../models');
 
-// get all posts for homepage
+// get all surveys for homepage
 router.get('/', (req, res) => {
-  // Send all of the books to 'homepage.handlebars' as an object
+  // res.render('homepage');
+  //Send all of the surveys to 'homepage.handlebars' as an object
   Survey.findAll({
     attributes: [
       'id',
@@ -13,30 +14,16 @@ router.get('/', (req, res) => {
       'start_date',
       'end_date',
       'is_active',
-    ],
-
-    include: [
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username'],
-        },
-      },
-      {
-        model: User,
-        attributes: ['username'],
-      },
-    ],
-  })
+    ]
+  }
+  )
     .then((dbPostData) => {
       console.log('bbbbbbbbbbbbbbbb', dbPostData);
       const posts = dbPostData.map((post) => post.get({ plain: true }));
       console.log('aaaaaaaaaaaa', posts);
       res.render('homepage', {
         posts,
-        loggedIn: req.session.loggedIn,
+       // loggedIn: req.session.loggedIn,
       });
     })
     .catch((err) => {

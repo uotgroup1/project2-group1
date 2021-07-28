@@ -9,7 +9,7 @@ Answers.init(
   {
     // Model attributes are defined here
     id: {
-      type: DataTypes.INTEGER,
+      type:DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,

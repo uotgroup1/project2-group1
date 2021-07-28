@@ -16,25 +16,28 @@ UserAnswers.init(
     },
     question_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'questions',
         key: 'id',
-      },
     },
     answer_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'answers',
-        key: 'id',
-      },
+        key: 'id'
+      }
     },
     user_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'users',
-        key: 'id',
-      },
-    },
+        key: 'id'
+        }
+      }
+    }
   },
   {
     sequelize,

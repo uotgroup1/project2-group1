@@ -28,10 +28,10 @@ Users.init(
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate:{
-        isEmail: true
-      }
-    },
+      validate: {
+        isEmail: true,
+      },
+    },  
     user_name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -44,6 +44,14 @@ Users.init(
       },
     },
   },
+   
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'users',
+  },
   {
     // add hoooks here for password encryption
     hooks: {
@@ -55,14 +63,11 @@ Users.init(
         updatedUserData.password = await bcrypt.hash(
           updatedUserData.password,10);
         return updatedUserData;
-      }
+      },
     },
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'users',
-  }
+       
+    },
+ 
 );
 
 module.exports = Users;

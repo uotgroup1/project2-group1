@@ -13,24 +13,24 @@ Questions.init(
       type:DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true,
+      primaryKey: true
     },
     survey_id: {
       type:DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'survey',
-        key: 'id',
-      },
+        key: 'id'
+      }
     },
     question_type: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type:DataTypes.STRING,
+      allowNull: false
     },
-    question: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+   question: {
+      type:DataTypes.STRING,
+      allowNull: false
+    }
   },
   {
     sequelize,

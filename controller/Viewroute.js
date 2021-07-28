@@ -18,16 +18,16 @@ router.get('/', (req, res) => {
   )
     .then((dbPostData) => {
       console.log('bbbbbbbbbbbbbbbb', dbPostData);
-      const posts = dbPostData.map((post) => post.get({ plain: true }));
-      console.log('aaaaaaaaaaaa', posts);
-      res.render('homepage', {
-        posts,
-        loggedIn: req.session.loggedIn,
+      const surveys = dbPostData.map((post) => post.get({ plain: true }));
+      console.log('aaaaaaaaaaaa', surveys);
+      res.render('dashboard', {
+        surveys, 
+        loggedIn: req.session ?  req.session.loggedIn : false ,
       });
     })
     .catch((err) => {
       console.log(err);
-      res.status(500).json(err);
+      res.status(500).json(ernodemonr);
     });
 });
 
@@ -55,16 +55,11 @@ router.get('/survey/:id', (req, res) => {
     ],
     include: [
       {
-        model: UserAnswers,
-        attributes: ['id', 'question_id', 'answer_id', 'user_id'],
-        include: {
-          model: User,
-          attributes: ['username'],
-        },
+        model: Questions
       },
       {
-        model: User,
-        attributes: ['username'],
+        model: Users,
+        attributes: ['user_name'],
       },
     ],
   })
@@ -73,14 +68,15 @@ router.get('/survey/:id', (req, res) => {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-      console.log('dbpostdata', dbPostData);
+  
       // serialize the data
-      const post = dbPostData.get({ plain: true });
-
+      const survey = dbPostData.get({ plain: true });
+      console.log('dbpostdata', survey);
       // pass data to template
-      res.render('single-survey', {
-        post,
-        loggedIn: req.session.loggedIn,
+      res.render('updatesurvey', {
+        survey,
+        questions: survey.questions,
+        loggedIn: req.session ?  req.session.loggedIn : false ,
       });
     })
     .catch((err) => {

@@ -9,15 +9,19 @@
             <!-- QUESTION ONE probably need for loop in js, change text for {{user.inputed.text}}-->
             <div class="update-survey-box">
                 <div class="questOpts">
-                    <p>Question One: <span>{{What is your favourite dragon?}}</span></p>
-                    <p>Option One: <span>{{Hungarian Horntail}}</span></p>
-                    <p>Option Two: <span>{{Chinese Firebolt}}</span></p>
-                    <p>Option Three: <span>{{Norwegian Ridgeback}}</span></p>
-                    <p>Option Four: <span>{{Puff the Magic Dragon}}</span></p>
-                    <div class=></div>
-                    <button id="edit-btn">EDIT</button>
-                    <button id="delete-btn">DELETE</button>
-                    <button id="save-btn">SAVE</button>
-                </div>
+
+
+
+                    {{#each questions }}
+                     <p>Question: <span>{{question}}</span></p>
+                     <input class="form-control" type="text" id="comment" > 
+                     <button class="btn small btn-success btn-savecomment" class="edit-link">Edit post</button>
+                     <button class="btn small btn-success btn-savecomment" class="edit-link">Delete post</button>
+                     <button class="btn small btn-success btn-savecomment" class="edit-link">Save post</button>
+                     
+                    {{/each}}
+
+
+                 
             </div>
         </section>

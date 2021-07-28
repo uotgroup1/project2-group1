@@ -23,6 +23,12 @@ router.get('/', (req, res) => {
       {
         model: Questions,
         attributes: ['id', 'survey_ID', 'question_type', 'question'],
+        include: [
+          {
+            model: Answers,
+            //attributes: [],
+          },
+        ],
       },
     ],
   }).then((dbPost) => {
@@ -31,10 +37,30 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  Survey.findAll({
+  Survey.findOne({
     where: {
       id: req.params.id,
     },
+    attributes: [
+      'id',
+      'user_id',
+      'description',
+      'start_date',
+      'end_date',
+      'is_active',
+    ],
+    include: [
+      {
+        model: Questions,
+        attributes: ['id', 'survey_ID', 'question_type', 'question'],
+        include: [
+          {
+            model: Answers,
+            //attributes: [],
+          },
+        ],
+      },
+    ],
   }).then((dbPost) => {
     res.json(dbPost);
   });
@@ -54,6 +80,17 @@ router.delete('/:id', (req, res) => {
       }
       res.json(dbPostData);
     })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+router.post('/', (req, res) => {
+  Survey.create({
+    description: req.body.description,
+    user_id: req.session.user_id,
+  })
+    .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);

@@ -10,13 +10,13 @@ class Questions extends Model {}
 Questions.init(
   {
     id: {
-      type:DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
       primaryKey: true
     },
     survey_id: {
-      type:DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'survey',

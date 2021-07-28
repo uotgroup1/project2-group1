@@ -4,7 +4,8 @@ const { Answers, Questions, Survey, Users, UserAnswers } = require('../models');
 
 // get all surveys for homepage
 router.get('/', (req, res) => {
-  // Send all of the surveys to 'homepage.handlebars' as an object
+  // res.render('homepage');
+  //Send all of the surveys to 'homepage.handlebars' as an object
   Survey.findAll({
     attributes: [
       'id',

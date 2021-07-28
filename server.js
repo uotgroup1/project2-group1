@@ -25,7 +25,7 @@ app.set('view engine', 'handlebars');
 
 //-------------------------------------------------------------------------------
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SESS_PW,
   cookie: {},
   resave: false,
   saveUninitialized: true,

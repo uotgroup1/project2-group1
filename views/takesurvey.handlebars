@@ -1,7 +1,7 @@
 <section>
             <div class="container main-survey-sec">
                 <div class="row">
-                    <h2 class="survey-name">{{survey.title}}</h2>
+                    <h2 class="survey-name">{{ id }}</h2>
                 </div>
 
                 <!-- JS inserts users questions and option from before and loops -->
@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col survey-question">
                             <p>
-                                {{survey.question}}
+                                Which is your favourite food?
                             </p>
                         </div>
                     </div>
@@ -32,11 +32,12 @@
                          --}}
 
                         
-                    {{#each survey }}
-                     <p>Survey: <span>{{ survey }}</span></p>
+                    {{!-- {{#each questions }} --}}
+                     <p>Survey: 1 <span> {{ description }} </span></p>
+                     
                      <input class="form-control" type="text" id="comment" > 
-                     <button class="btn small btn-success btn-savecomment" class="take-survey">Take Survey</button>
-                    {{/each}}
+                     {{!-- <button class="btn small btn-success btn-savecomment" class="take-survey">Take Survey</button> --}}
+                    {{!-- {{/each}} --}}
                         
                     </div>
                     
@@ -49,3 +50,4 @@
                 </div>
             </div>
         </section>
+        <br>

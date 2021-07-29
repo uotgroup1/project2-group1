@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
       console.log('bbbbbbbbbbbbbbbb', dbPostData);
       const surveys = dbPostData.map((post) => post.get({ plain: true }));
       console.log('aaaaaaaaaaaa', surveys);
-      res.render('homepage', {
+      res.render('takesurvey', {
         surveys, 
         loggedIn: req.session ?  req.session.loggedIn : false ,
       });

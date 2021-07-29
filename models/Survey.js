@@ -11,26 +11,6 @@ Survey.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-<<<<<<< HEAD
-<<<<<<< HEAD
-      primaryKey: true
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    start_date: {
-      type: DataTypes.DATE
-    },
-    end_date: {
-      type: DataTypes.DATE
-=======
-=======
->>>>>>> refs/remotes/origin/database
       primaryKey: true,
     },
     user_id: {
@@ -50,26 +30,12 @@ Survey.init(
     },
     end_date: {
       type: DataTypes.DATE,
-<<<<<<< HEAD
->>>>>>> farnoush
-=======
->>>>>>> refs/remotes/origin/database
     },
     is_active: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-<<<<<<< HEAD
-<<<<<<< HEAD
-      defaultValue: true
-    }
-=======
       defaultValue: true,
     },
->>>>>>> farnoush
-=======
-      defaultValue: true,
-    },
->>>>>>> refs/remotes/origin/database
   },
   {
     sequelize,
@@ -81,10 +47,3 @@ Survey.init(
 );
 
 module.exports = Survey;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> farnoush
-=======
->>>>>>> refs/remotes/origin/database

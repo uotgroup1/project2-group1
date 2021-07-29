@@ -14,16 +14,14 @@ router.get('/', (req, res) => {
       'start_date',
       'end_date',
       'is_active',
-    ]
-  }
-  )
+    ],
+  })
     .then((dbPostData) => {
-      console.log('bbbbbbbbbbbbbbbb', dbPostData);
       const surveys = dbPostData.map((post) => post.get({ plain: true }));
-      console.log('aaaaaaaaaaaa', surveys);
+
       res.render('homepage', {
-        surveys, 
-        loggedIn: req.session ?  req.session.loggedIn : false ,
+        surveys,
+        loggedIn: req.session ? req.session.loggedIn : false,
       });
     })
     .catch((err) => {
@@ -38,7 +36,7 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render('dashboard');
 });
 
 router.get('/survey/:id', (req, res) => {
@@ -56,7 +54,7 @@ router.get('/survey/:id', (req, res) => {
     ],
     include: [
       {
-        model: Questions
+        model: Questions,
       },
       {
         model: Users,
@@ -69,7 +67,7 @@ router.get('/survey/:id', (req, res) => {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-  
+
       // serialize the data
       const survey = dbPostData.get({ plain: true });
       console.log('dbpostdata', survey);
@@ -77,7 +75,7 @@ router.get('/survey/:id', (req, res) => {
       res.render('updatesurvey', {
         survey,
         questions: survey.questions,
-        loggedIn: req.session ?  req.session.loggedIn : false ,
+        loggedIn: req.session ? req.session.loggedIn : false,
       });
     })
     .catch((err) => {

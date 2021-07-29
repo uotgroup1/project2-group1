@@ -58,18 +58,12 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   console.log(req.body);
   Users.create({
-    username: req.body.username,
+    user_name: req.body.user_name,
     email: req.body.email,
     password: req.body.password,
   })
     .then((Data) => {
-      req.session.save(() => {
-        req.session.user_id = Data.id;
-        req.session.username = Data.username;
-        req.session.loggedIn = true;
-
-        res.json(Data);
-      });
+      res.json(Data);
     })
     .catch((err) => {
       console.log(err);

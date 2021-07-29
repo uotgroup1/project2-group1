@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
             model: Answers,
             //attributes: [],
           },
-        ]
+        ],
       },
     ],
   }).then((dbPost) => {
@@ -40,7 +40,8 @@ router.get('/:id', (req, res) => {
   Survey.findOne({
     where: {
       id: req.params.id,
-    }, attributes: [
+    },
+    attributes: [
       'id',
       'user_id',
       'description',
@@ -57,9 +58,9 @@ router.get('/:id', (req, res) => {
             model: Answers,
             //attributes: [],
           },
-        ]
+        ],
       },
-    ]
+    ],
   }).then((dbPost) => {
     res.json(dbPost);
   });
@@ -79,6 +80,17 @@ router.delete('/:id', (req, res) => {
       }
       res.json(dbPostData);
     })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+router.post('/', (req, res) => {
+  Survey.create({
+    description: req.body.description,
+    user_id: req.session.user_id,
+  })
+    .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);

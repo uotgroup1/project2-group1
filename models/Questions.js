@@ -10,42 +10,13 @@ class Questions extends Model {}
 Questions.init(
   {
     id: {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      type:DataTypes.INTEGER,
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true
-    },
-    survey_ID: {
-      type:DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'survey',
-        key: 'id'
-      }
-    },
-    question_type: {
-      type:DataTypes.STRING,
-      allowNull: false
-    },
-   question: {
-      type:DataTypes.STRING,
-      allowNull: false
-    }
-=======
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-=======
-      type:DataTypes.INTEGER,
-      allowNull: false,
-      autoIncrement: true,
->>>>>>> refs/remotes/origin/database
       primaryKey: true,
     },
     survey_id: {
-      type:DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'survey',
@@ -60,10 +31,6 @@ Questions.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-<<<<<<< HEAD
->>>>>>> farnoush
-=======
->>>>>>> refs/remotes/origin/database
   },
   {
     sequelize,

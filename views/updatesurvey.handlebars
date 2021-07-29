@@ -1,0 +1,27 @@
+  <section>
+            <div class="container main-survey-sec">
+                <div class="update-surveys">
+                    <h2>U<span>PDATE</span> Y<span>OUR</span> S<span>URVEY</span></h2>
+                    <h3>{{survey-name}}</h3>
+                </div>
+            </div>
+
+            <!-- QUESTION ONE probably need for loop in js, change text for {{user.inputed.text}}-->
+            <div class="update-survey-box">
+                <div class="questOpts">
+
+
+
+                    {{#each questions }}
+                     <p>Question: <span>{{question}}</span></p>
+                     <input class="form-control" type="text" id="comment" > 
+                     <button class="btn small btn-success btn-savecomment" class="edit-link">Edit post</button>
+                     <button class="btn small btn-success btn-savecomment" class="edit-link">Delete post</button>
+                     <button class="btn small btn-success btn-savecomment" class="edit-link">Save post</button>
+                     
+                    {{/each}}
+
+
+                 
+            </div>
+        </section>

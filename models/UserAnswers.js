@@ -20,7 +20,8 @@ UserAnswers.init(
       references: {
         model: 'questions',
         key: 'id',
-    },
+    }
+  },
     answer_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -37,7 +38,6 @@ UserAnswers.init(
         key: 'id'
         }
       }
-    }
   },
   {
     sequelize,

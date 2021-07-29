@@ -13,7 +13,7 @@ Questions.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
     },
     survey_id: {
       type: DataTypes.INTEGER,

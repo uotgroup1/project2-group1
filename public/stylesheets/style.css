@@ -151,7 +151,6 @@ button:hover {
 .login-signup {
     display: inline-block;
     justify-content: space-between;
-    float: right;
 }
 
 .login-sec, 

@@ -32,10 +32,6 @@ Users.init(
         isEmail: true,
       },
     },  
-    user_name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -44,7 +40,6 @@ Users.init(
       },
     },
   },
-   
   {
     sequelize,
     timestamps: false,

@@ -13,7 +13,7 @@ if(email && password) {
         Headers:{'Content-Type':'applicatoin/json'} //this holds the metadata of the request It specifies the data type to be sent in the request
     })
     if (response.ok) { //if the response is ok go to this url otherwise send a alert to browser
-        document.location.replace('/userDashboard/') // need to confirm this with html routes
+        document.location.replace('dashboard') // need to confirm this with html routes
     }
     else {
         alert(response.statusText)
@@ -22,24 +22,27 @@ if(email && password) {
 
 //signup handler fxn
 async function signUpHandler (event) {
+    alert("Hello")
 event.preventDefault(event) //this is to stop it from loading 
-const userName = document.querySelector('#username-signup').value().trim()
-const email = document.querySelector('email-signup').value().trim()
-const password = document.querySelector('password-signup').value().trim()
-
-if(userName && email && password) {
+const user_name = document.querySelector('#username-signup').value().trim()
+const email = document.querySelector('#email-signup').value().trim()
+const password = document.querySelector('#password-signup').value().trim()
+console.log(user_name);
+if(user_name && email && password) {
+    console.log("passed")
     const response = await fetch('/api/users/', {
         method:'post',
         body: JSON.stringify({
-            userName,email,password
+            user_name,email,password
         }),
         headers:{'Content-Type': 'application/json'}
     })
     if(response.ok) {
-        document.location.replace('/userDashboard/')
+        document.location.replace('dashboard')
     }
+    console.log("skipped")
 }
 }
 
-document.querySelector('.login-form').addEventListener('submit', loginSurveyHandler)
-document.querySelector('.signup-form').addEventListener('submit', loginSurveyHandler)
+document.querySelector('#login-btn').addEventListener('submit', loginSurveyHandler)
+document.querySelector('#signup-btn').addEventListener('submit', signUpHandler)

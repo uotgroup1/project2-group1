@@ -1,27 +1,46 @@
-  <section>
-            <div class="container main-survey-sec">
-                <div class="update-surveys">
-                    <h2>U<span>PDATE</span> Y<span>OUR</span> S<span>URVEY</span></h2>
-                    <h3>{{survey-name}}</h3>
-                </div>
+<section>
+    <div class="container main-survey-sec">
+        <div class="update-surveys">
+            <h2>U<span>PDATE</span> Y<span>OUR</span> S<span>URVEY</span></h2>
+            <div>
+                <input type="text" name="survey-title" value="{{survey.title}}">
             </div>
+        </div>
+    </div>
 
-            <!-- QUESTION ONE probably need for loop in js, change text for {{user.inputed.text}}-->
-            <div class="update-survey-box">
-                <div class="questOpts">
-
-
-
-                    {{#each questions }}
-                     <p>Question: <span>{{question}}</span></p>
-                     <input class="form-control" type="text" id="comment" > 
-                     <button class="btn small btn-success btn-savecomment" class="edit-link">Edit post</button>
-                     <button class="btn small btn-success btn-savecomment" class="edit-link">Delete post</button>
-                     <button class="btn small btn-success btn-savecomment" class="edit-link">Save post</button>
-                     
-                    {{/each}}
-
-
-                 
-            </div>
-        </section>
+    <!-- QUESTION ONE probably need for loop in js, change text for {{user.inputed.text}}-->
+    <div class="update-survey-box">
+        <div class="questOpts">
+            <p>Question One:
+                <span>
+                    <input type="text" name="question" value="{{What is your favourite dragon?}}">
+                </span>
+            </p>
+            <p>Option One:
+                <span>
+                    <!-- name option might change based on loop? -->
+                    <input type="text" name="option" value="{{Hungarian Horntail}}">
+                </span>
+            </p>
+            <p>Option Two:
+                <span>
+                    <input type="text" name="option" value="{{Chinese Firebolt}}">
+                </span>
+            </p>
+            <p>Option Three:
+                <span>
+                    <input type="text" name="option" value="{{Norwegian Ridgeback}}">
+                </span>
+            </p>
+            <p>Option Four:
+                <span>
+                    <input type="text" name="option" value="{{Puff the Magic Dragon}}">
+                </span>
+            </p>
+            <div class=></div>
+            <button type="button" id="edit-btn">EDIT</button>
+            <button type="button" id="delete-btn">DELETE</button>
+            <button type="submit" id="save-btn">SAVE</button>
+        </div>
+    </div>
+</section>

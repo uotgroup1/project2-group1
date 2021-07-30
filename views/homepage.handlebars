@@ -1,17 +1,17 @@
  <div class="container main-survey-sec">
-        <div class="row">
-          <div class="col-8 explore-surveys">
-            <h2>E<span>XPLORE</span> S<span>URVEYS</span></h2>
+    <div class="row">
+      <div class="col-8 explore-surveys">
+        <h2>E<span>XPLORE</span> S<span>URVEYS</span></h2>
 
-            <!-- SURVEY (X) probably need for loop in js-->
-            <div class="row">
-                {{#each surveys as |survey|}}
-              <div class="survey-box">
-                <p> {{survey.title}}: <span> {{survey.description}}</span></p>
-                <button id="start-btn" onclick="/homepage/takesurvey/{{survey.id}}">START</button>
-              </div>
-              {{/each}}
-            </div>
+        <!-- SURVEY (X) probably need for loop in js-->
+        <div class="row">
+            {{#each surveys as |survey|}}
+          <div class="survey-box">
+            <p> {{survey.title}}: <span> {{survey.description}}</span></p>
+            <button id="start-btn" onclick="/homepage/takesurvey/{{survey.id}}">START</button>
+          </div>
+          {{/each}}
+        </div>
             
 
           <!-- LOGIN FORM -->
@@ -64,4 +64,4 @@
   </div>
   </div>
 
-<script src="/javascript/logdddin.js"></script>
+<script src="/javascript/login.js"></script>

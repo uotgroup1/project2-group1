@@ -83,4 +83,17 @@ router.get('/survey/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('homepage');
+});
+
+router.get('/dashboard', (req, res) => {
+  res.render('dashboard');
+});
 module.exports = router;

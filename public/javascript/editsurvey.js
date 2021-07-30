@@ -25,5 +25,12 @@ async function editFormHandler(event) {
         alert(response.statusText);
     }
 }
+console.log('This works')
+
+function addQuestion(){
+ console.log('Hi')
+}
 
 document.querySelector('.questOpts').addEventListener('submit', editFormHandler);
+document.querySelector('addQuestion').addEventListener('onclick', addQuestion);
+

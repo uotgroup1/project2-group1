@@ -9,13 +9,13 @@ async function loginSurveyHandler(event) {
   if (email && password) {
     const response = await fetch('/api/users/login', {
       //need to make sure this path corresponds to pass in backend
-      method: 'post', //this is a post request
+      method: 'POST', //this is a post request
       body: JSON.stringify({
         //we need to stringify the email and password to pass to backend
         email,
         password,
       }),
-      Headers: { 'Content-Type': 'application/json' }, //this holds the metadata of the request It specifies the data type to be sent in the request
+      headers: { 'Content-Type': 'application/json' }, //this holds the metadata of the request It specifies the data type to be sent in the request
     });
 
     console.log('******', response);

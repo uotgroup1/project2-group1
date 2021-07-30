@@ -28,9 +28,10 @@ Users.init(
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate
+      validate: {
         isEmail: true,
       },
+    },  
     user_name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -43,6 +44,14 @@ Users.init(
       },
     },
   },
+   
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'users',
+  },
   {
     // add hoooks here for password encryption
     hooks: {
@@ -52,23 +61,13 @@ Users.init(
       },
       async beforeUpdate(updatedUserData) {
         updatedUserData.password = await bcrypt.hash(
-          updatedUserData.password,
-          10
-        );
+          updatedUserData.password,10);
         return updatedUserData;
       },
     },
-        len: [8] //Not sure what the length should be set it as 8
-      }
-    }
-  },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'users',
-  }
+       
+    },
+ 
 );
 
 module.exports = Users;

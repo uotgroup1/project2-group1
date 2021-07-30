@@ -1,3 +1,4 @@
+
 async function newFormHandler(event) {
     event.preventDefault();
 
@@ -25,3 +26,4 @@ async function newFormHandler(event) {
 }
 
 document.querySelector('.new-survey-form').addEventListener('submit', newFormHandler);
+

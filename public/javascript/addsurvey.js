@@ -1,9 +1,14 @@
+
 async function newFormHandler(event) {
     event.preventDefault();
     console.log('HI')
     // const title = document.querySelector('input[name"surv-name"]').value;
     // const question = document.querySelector('input[name="question"]').value;
     // const option = document.querySelector('input[name="option"]').value;
+
+    const title = document.querySelector('input[name"surv-name"]').value;
+    const question = document.querySelector('input[name="question"]').value;
+    const option = document.querySelector('input[name="option"]').value;
 
     const response = await fetch(`/api/survey`, {
         method: 'POST',
@@ -16,7 +21,6 @@ async function newFormHandler(event) {
             'Content-Type': 'application/json'
         }
     });
-  
 
     if (response.ok) {
         document.location.replace('/dashboard');
@@ -40,8 +44,6 @@ function addOption(){
     div.innerHTML = option; 
     document.querySelector('.new-survey-form').appendChild(div);
 }
-
-
 
 document.querySelector('#save-surv-btn').addEventListener('submit', newFormHandler);
 document.querySelector('.addQuestion').addEventListener('click', addQuestion);

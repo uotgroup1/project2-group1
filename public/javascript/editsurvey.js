@@ -24,7 +24,7 @@ async function editFormHandler(event) {
     } else {
         alert(response.statusText);
     }
-}
+  }
 console.log('This works')
 
 function addQuestion(){

@@ -64,6 +64,9 @@ header img {
 
 .main-survey-sec {
     margin-top: 3%;
+    margin-left: 5%;
+    display: inline-block;
+    width: 100%
 }
 
 .explore-surveys h2 {
@@ -145,6 +148,11 @@ button:hover {
     font-size: 0.8em;
 }
 
+.login-signup {
+    display: inline-block;
+    justify-content: space-between;
+}
+
 .login-sec, 
 .signup-sec,
 .create-sec {
@@ -155,6 +163,7 @@ button:hover {
 
 .login-form input, .signup-form input {
     width: 100%;
+  
 }
 
 form > div {

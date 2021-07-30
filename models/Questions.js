@@ -20,17 +20,17 @@ Questions.init(
       allowNull: false,
       references: {
         model: 'survey',
-        key: 'id',
-      },
+        key: 'id'
+      }
     },
     question_type: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type:DataTypes.STRING,
+      allowNull: false
     },
-    question: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+   question: {
+      type:DataTypes.STRING,
+      allowNull: false
+    }
   },
   {
     sequelize,

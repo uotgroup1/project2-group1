@@ -10,10 +10,10 @@ if(email && password) {
         body:JSON.stringify({ //we need to stringify the email and password to pass to backend
         email,password
         }),
-        Headers:{'Content-Type':'applicatoin/json'} //this holds the metadata of the request It specifies the data type to be sent in the request
+        Headers:{'Content-Type':'application/json'} //this holds the metadata of the request It specifies the data type to be sent in the request
     })
     if (response.ok) { //if the response is ok go to this url otherwise send a alert to browser
-        document.location.replace('/userDashboard/') // need to confirm this with html routes
+        document.location.replace('/') // need to confirm this with html routes
     }
     else {
         alert(response.statusText)
@@ -41,5 +41,5 @@ if(userName && email && password) {
 }
 }
 
-document.querySelector('.login-form').addEventListener('submit', loginSurveyHandler)
-document.querySelector('.signup-form').addEventListener('submit', loginSurveyHandler)
+document.querySelector('#login-btn').addEventListener('submit', loginSurveyHandler)
+document.querySelector('#signup-form').addEventListener('submit', signUpHandler)

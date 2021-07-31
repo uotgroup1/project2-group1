@@ -88,10 +88,9 @@ router.post('/login', (req, res) => {
       res.status(400).json({ message: 'Incorrect password!' });
       return;
     }
-
     req.session.save(() => {
     req.session.user_id = Data.id;
-    req.session.username = Data.username;
+    req.session.username = Data.user_name;
     req.session.loggedIn = true;
 
     res.json({ user: Data.username, message: 'You are now logged in!' });

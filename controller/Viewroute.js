@@ -2,10 +2,21 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Answers, Questions, Survey, Users, UserAnswers } = require('../models');
 
+const withAuth = (req, res, next) => {
+  if (!req.session.user_id) {
+    res.redirect('/login');
+  } else {
+    next();
+  }
+};
+
+//module.exports = withAuth;
+
 // get all surveys for homepage
-router.get('/', (req, res) => {
-  // res.render('homepage');
-  //Send all of the surveys to 'homepage.handlebars' as an object
+router.get('/',withAuth, (req, res) => {
+  console.log(req.session);
+  console.log('======================');
+
   Survey.findAll({
     attributes: [
       'id',
@@ -13,12 +24,10 @@ router.get('/', (req, res) => {
       'description',
       'start_date',
       'end_date',
-      'is_active',
-    ]
-  }
-  )
+      'is_active']
+    })
     .then((dbPostData) => {
-     // console.log('bbbbbbbbbbbbbbbb', dbPostData);
+      console.log('bbbbbbbbbbbbbbbb', dbPostData);
       const surveys = dbPostData.map((post) => post.get({ plain: true }));
      // console.log('aaaaaaaaaaaa', surveys);
       res.render('homepage', {
@@ -28,7 +37,7 @@ router.get('/', (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      res.status(500).json(ernodemonr);
+      res.status(500).json(err);
     });
 });
 
@@ -37,10 +46,10 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-
   res.render('login');
 });
 
+//render specific survey with all its questions and answers
 router.get('/survey/:id', (req, res) => {
   Survey.findOne({
     where: {
@@ -52,8 +61,7 @@ router.get('/survey/:id', (req, res) => {
       'description',
       'start_date',
       'end_date',
-      'is_active',
-    ],
+      'is_active'],
     include: [
       {
         model: Questions
@@ -86,8 +94,43 @@ router.get('/survey/:id', (req, res) => {
     });
 });
 
+// get all surveys created by the user
 router.get('/dashboard', (req, res) => {
-  res.render('dashboard');
+  
+  console.log(req.session.username);
+  console.log('======================');
+  Survey.findAll({
+    where:{
+      user_id: req.session.user_id
+    },
+    attributes: [
+      'id',
+      'user_id',
+      'description',
+      'start_date',
+      'end_date',
+      'is_active']
+    })
+    .then((dbPostData) => {
+     console.log('bbbbbbbbbbbbbbbb', dbPostData);
+     if (!dbPostData) {
+      res.status(404).json({ message: 'No post found with this id' });
+      return;
+    }
+     const surveys = dbPostData.map((post) => post.get({ plain: true }));
+     // console.log('aaaaaaaaaaaa', surveys);
+     user_name=req.session.username
+     console.log(user_name)
+     res.render('dashboard', {
+      user_name,
+      surveys, 
+       loggedIn: req.session ?  req.session.loggedIn : false ,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 router.get('/newsurvey', (req, res) => {

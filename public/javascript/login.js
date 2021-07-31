@@ -11,7 +11,6 @@ async function loginSurveyHandler(event) {
       //need to make sure this path corresponds to pass in backend
       method: 'POST', //this is a post request
       body: JSON.stringify({
-        //we need to stringify the email and password to pass to backend
         email,
         password,
       }),

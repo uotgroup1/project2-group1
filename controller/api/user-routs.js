@@ -10,7 +10,9 @@ const {
 // get all users
 router.get('/', (req, res) => {
   Users.findAll({
-    attributes: { exclude: ['password'] },
+    attributes: { 
+      //exclude: ['password'] 
+  },
   })
     .then((Data) => res.json(Data))
     .catch((err) => {
@@ -80,7 +82,6 @@ router.post('/login', (req, res) => {
       res.status(400).json({ message: 'No user with that email address!' });
       return;
     }
-
     const validPassword = Data.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -89,12 +90,16 @@ router.post('/login', (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.user_id = Data.id;
-      req.session.username = Data.username;
-      req.session.loggedIn = true;
+    req.session.user_id = Data.id;
+    req.session.username = Data.username;
+    req.session.loggedIn = true;
 
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
+    res.json({ user: Data.username, message: 'You are now logged in!' });
     });
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
   });
 });
 

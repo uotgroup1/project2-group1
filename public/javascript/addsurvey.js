@@ -1,5 +1,5 @@
 //new survey fxn
-await function newSurveyHandler (event) {
+async function newSurveyHandler (event) {
 event.preventDefault()
 
 const newSurveyName = document.querySelector('.surv-name') 
@@ -20,4 +20,11 @@ const response = await fetch ('/api/surveys', {
         alert(response.statusText);
     }
 }
-document.querySelector('#save-surv-btn').addEventListener('click', newSurveyHandler)
+
+function newSurvey (event) {
+    event.preventDefault()
+    document.location.replace('/newsurvey')
+}
+
+//document.querySelector('#save-surv-btn').addEventListener('click', newSurveyHandler)
+document.querySelector('#start-here-btn').addEventListener('click', newSurvey)

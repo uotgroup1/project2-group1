@@ -88,7 +88,7 @@ router.delete('/:id', (req, res) => {
 router.post('/', (req, res) => {
   Survey.create({
     description: req.body.description,
-    user_id: req.session.user_id,
+    user_id: req.body.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {

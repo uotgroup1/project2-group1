@@ -85,4 +85,12 @@ router.get('/survey/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.get('/dashboard', (req, res) => {
+  res.render('dashboard');
+});
+
+router.get('/newsurvey', (req, res) => {
+  res.render('newsurvey');
+});
 module.exports = router;

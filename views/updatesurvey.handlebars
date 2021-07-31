@@ -1,27 +1,33 @@
-  <section>
-            <div class="container main-survey-sec">
-                <div class="update-surveys">
-                    <h2>U<span>PDATE</span> Y<span>OUR</span> S<span>URVEY</span></h2>
-                    <h3>{{survey-name}}</h3>
-                </div>
+<section>
+    <div class="container main-survey-sec">
+        <div class="update-surveys">
+            <h2>U<span>PDATE</span> Y<span>OUR</span> S<span>URVEY</span></h2>
+        </div>
+    </div>
+        <div class="row new-survey-box">
+            <form class="col-8 new-survey-form">
+                <label for="surv-name">Enter your survey name: </label>
+                <input type="text" name="surv-name" id="surv-name" class="form-input" value={{newSurveyName}}/>
+                <label for="question">Question:</label>
+                <textarea name="question" id="question" class="form-input" value={{newSurveyQuestion}}></textarea>
+                <label for="option">Option 1: </label>
+                <input type="text" name="option" id="optionone" class="form-input" />
+                <label for="option">Option 2: </label>
+                <input type="text" name="option" id="optiontwo" class="form-input" />
+                <label for="option">Option 3: </label>
+                <input type="text" name="option" id="optionthree" class="form-input" />
+                <label for="option">Option 4: </label>
+                <input type="text" name="option" id="optionfour" class="form-input" />
+            </form>
+            <div class="col-4 next-steps">
+                <h3>Click below to Save Survey</h3>
+                <br>
+                {{!-- <button class="addQuestion" id="add-quest-btn">Add Question</button>
+                <button id="addOpt-btn">Add Option</button> --}} 
+                <button type="submit" id="save-surv-btn">Save Survey</button>
             </div>
-
-            <!-- QUESTION ONE probably need for loop in js, change text for {{user.inputed.text}}-->
-            <div class="update-survey-box">
-                <div class="questOpts">
-
-
-
-                    {{#each questions }}
-                     <p>Question: <span>{{question}}</span></p>
-                     <input class="form-control" type="text" id="comment" > 
-                     <button class="btn small btn-success btn-savecomment" class="edit-link">Edit post</button>
-                     <button class="btn small btn-success btn-savecomment" class="edit-link">Delete post</button>
-                     <button class="btn small btn-success btn-savecomment" class="edit-link">Save post</button>
-                     
-                    {{/each}}
-
-
-                 
-            </div>
-        </section>
+        </div>
+    </div>
+</section>
+<br />
+<script src='/javascript/editsurvey.js'></script>

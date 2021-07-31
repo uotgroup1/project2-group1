@@ -16,20 +16,23 @@ router.get('/', (req, res) => {
       'user_id',
       'newSurveyName',
       'newSurveyQuestion',
-      'newSurveyAnswerOption',
+      'Option1',
+      'Option2',
+      'Option3',
+      'Option4',
     ],
-    include: [
-      {
-        model: Questions,
-        attributes: ['id', 'survey_ID', 'question_type', 'question'],
-        include: [
-          {
-            model: Answers,
-            //attributes: [],
-          },
-        ],
-      },
-    ],
+    // include: [
+    //   {
+    //     model: Questions,
+    //     attributes: ['id', 'survey_ID', 'question_type', 'question'],
+    //     include: [
+    //       {
+    //         model: Answers,
+    //         //attributes: [],
+    //       },
+    //     ],
+    //   },
+    // ],
   }).then((dbPost) => {
     res.json(dbPost);
   });
@@ -45,7 +48,10 @@ router.get('/:id', (req, res) => {
       'user_id',
       'newSurveyName',
       'newSurveyQuestion',
-      'newSurveyAnswerOption',
+      'Option1',
+      'Option2',
+      'Option3',
+      'Option4',
     ],
     include: [
       {
@@ -88,7 +94,11 @@ router.post('/', (req, res) => {
   Survey.create({
     newSurveyName: req.body.newSurveyName,
     newSurveyQuestion: req.body.newSurveyQuestion,
-    newSurveyAnswerOption: req.body.newSurveyAnswerOption,
+    // newSurveyAnswerOption: req.body.newSurveyAnswerOption,
+    Option1: req.body.Option1,
+    Option2: req.body.Option2,
+    Option3: req.body.Option3,
+    Option4: req.body.Option4,
     user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))

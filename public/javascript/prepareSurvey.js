@@ -5,15 +5,23 @@ async function newSurveyHandler(event) {
 
   const newSurveyName = document.querySelector('#surv-name').value.trim();
   const newSurveyQuestion = document.querySelector('#question').value.trim();
-  const newSurveyAnswerOption = document.querySelector('#option').value.trim();
-  console.log(newSurveyName);
+  // const newSurveyAnswerOption = document.querySelector('#option').value.trim();
+  const Option1 = document.querySelector('#optionone').value.trim();
+  const Option2 = document.querySelector('#optiontwo').value.trim();
+  const Option3 = document.querySelector('#optionthree').value.trim();
+  const Option4 = document.querySelector('#optionfour').value.trim();
+  console.log(Option1, Option2);
   const response = await fetch('/api/survey', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       newSurveyName,
       newSurveyQuestion,
-      newSurveyAnswerOption,
+      // newSurveyAnswerOption,
+      Option1,
+      Option2,
+      Option3,
+      Option4,
     }),
   });
 

@@ -13,7 +13,9 @@
                         </div>
                         <div class="d-flex upDel-btns">
                             <button id="view-btn">VIEW</button>
-                            <button id="update-btn">UPDATE</button>
+                            {{!-- <button id="update-btn{{id}}">UPDATE</button> --}}
+                            <a href="/survey/{{id}}">UPDATE</a>
+
                             <button id="delete-btn">DELETE</button>
                         </div>
                     </div>
@@ -32,3 +34,4 @@
     </div>
 </section>
 <script src="/javascript/addsurvey.js"></script>
+<script src="/javascript/editsurvey.js"></script>

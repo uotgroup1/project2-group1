@@ -29,10 +29,26 @@ Survey.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    newSurveyAnswerOption: {
+    Option1: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    Option2: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    Option3: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    Option4: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    // newSurveyAnswerOption: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
   },
   {
     sequelize,

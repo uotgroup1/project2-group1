@@ -1,26 +1,62 @@
 //edit survey fxn
-async function editSurveyHandler (event) {
-event.preventDefault()
-const titleId = ['traverse here through the DOM to get the ID of the question']
-const currentTitle = document.querySelector(`#${titleId}`).value().trim()
-const questionId = ['traverse here through the DOM to get the ID of the question']
-const currentQuestion = document.querySelector(`#${questionId}`).value().trim()
-const AnswerId = ['traverse here through the DOM to get the ID of the question']
-const currentAnswer = document.querySelector(`#${AnswerId}`).value().trim()
+// const surveyID = window.location.toString().split('/')[
+//   window.location.toString().split('/').length - 1
+// ];
 
-const response = await fetch('', {
-method:'PUT',
-body:JSON.stringify({
-    currentTitle,currentQuestion,currentAnswer
-}),
-Headers:{ 'Content-Type': 'application/json'}
-})
-if(response.ok) {
-    document.location.replace('/userDashboard')
-}
-else {
-    alert(response.statusText)
-}
-}
+// const editFormHandler = async function (event) {
+//   event.preventDefault();
 
-document.querySelector('#save-btn').addEventListener('click', editSurveyHandler)
+//   const title = document.querySelector('input[name="post-title"]').value;
+//   const body = document.querySelector('textarea[name="post-body"]').value;
+
+//   await fetch(`/api/post/${surveyID}`, {
+//     method: 'PUT',
+//     body: JSON.stringify({
+//       title,
+//       body,
+//     }),
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//   });
+
+//   document.location.replace('/dashboard');
+// };
+
+// const deleteClickHandler = async function () {
+//   await fetch(`/api/post/${surveyID}`, {
+//     method: 'DELETE',
+//   });
+
+//   document.location.replace('/dashboard');
+// };
+
+// document
+//   .querySelector('#update-btn')
+//   .addEventListener('submit', editFormHandler);
+// document
+//   .querySelector('#delete-btn')
+//   .addEventListener('click', deleteClickHandler);
+
+const newUpdateButton = document.querySelector('#update-btn');
+
+async function newUpdateHandler(event) {
+  event.preventDefault();
+
+  console.log('Test');
+  // const newSurveyName = document.querySelector('.surv-name');
+  // const newSurveyQuestion = document.querySelector('#question');
+  // const newSurveyAnswerOption = document.querySelector('#option');
+
+  // const response = await fetch('/api/survey', {
+  //   method: 'get',
+  //   Headers: { 'Content-Type': 'application/json' },
+  // });
+  // if (response.ok) {
+
+  document.location.replace('/updatesurvey');
+  // } else {
+  //   alert(response.statusText);
+  // }
+}
+newUpdateButton.addEventListener('click', newUpdateHandler);

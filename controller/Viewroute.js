@@ -48,7 +48,10 @@ router.get('/survey/:id', (req, res) => {
       'user_id',
       'newSurveyName',
       'newSurveyQuestion',
-      'newSurveyAnswerOption',
+      'Option1',
+      'Option2',
+      'Option3',
+      'Option4',
     ],
     include: [
       {
@@ -98,7 +101,10 @@ router.get('/dashboard', (req, res) => {
       'user_id',
       'newSurveyName',
       'newSurveyQuestion',
-      'newSurveyAnswerOption',
+      'Option1',
+      'Option2',
+      'Option3',
+      'Option4',
     ],
   })
     .then((dbPostData) => {
@@ -117,4 +123,10 @@ router.get('/dashboard', (req, res) => {
 router.get('/survey', (req, res) => {
   res.render('newsurvey');
 });
+
+router.get('/updatesurvey', (req, res) => {
+  res.render('updatesurvey');
+});
+
+r;
 module.exports = router;

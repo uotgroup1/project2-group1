@@ -43,12 +43,12 @@ router.get('/:id', (req, res) => {
       },
     ],
   })
-    .then((dbUserData) => {
+    .then((Data) => {
       if (!dbUserData) {
         res.status(404).json({ message: 'No user found with this id' });
         return;
       }
-      res.json(dbUserData);
+      res.json(Data);
     })
     .catch((err) => {
       console.log(err);
@@ -70,17 +70,20 @@ router.post('/', (req, res) => {
     });
 });
 router.post('/login', (req, res) => {
+  console.log(req.body);
   Users.findOne({
     where: {
       email: req.body.email,
     },
   }).then((Data) => {
+    console.log(Data);
     if (!Data) {
       res.status(400).json({ message: 'No user with that email address!' });
       return;
     }
 
     const validPassword = Data.checkPassword(req.body.password);
+    console.log(validPassword);
     if (!validPassword) {
       res.status(400).json({ message: 'Incorrect password!' });
       return;
@@ -88,11 +91,10 @@ router.post('/login', (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = Data.id;
-      req.session.username = Data.username;
+      req.session.username = Data.user_name;
       req.session.loggedIn = true;
+      res.status(200).json({ user: Data, message: 'You are now logged in!' });
     });
-
-    res.status(200).json({ user: Data, message: 'You are now logged in!' });
   });
 });
 

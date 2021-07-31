@@ -1,23 +1,22 @@
-//new survey fxn
-await function newSurveyHandler (event) {
-event.preventDefault()
+const newSurveyButton = document.querySelector('#start-here-btn');
 
-const newSurveyName = document.querySelector('.surv-name') 
-const newSurveyQuestion = document.querySelector('#question')
-const newSurveyAnswerOption = document.querySelector('#option')
+async function newSurveyHandler(event) {
+  event.preventDefault();
 
-const response = await fetch ('/api/surveys', {
-    method:'post',
-    body:JSON.stringify({
-        newSurveyName,newSurveyQuestion,newSurveyAnswerOption
-    }),
-    Headers:{"Content-Type":"application/json"}
-})
-    if (response.ok) {
-        document.location.replace('/userDashboard')
-    }
-    else {
-        alert(response.statusText);
-    }
+  console.log('Test');
+  // const newSurveyName = document.querySelector('.surv-name');
+  // const newSurveyQuestion = document.querySelector('#question');
+  // const newSurveyAnswerOption = document.querySelector('#option');
+
+  // const response = await fetch('/api/survey', {
+  //   method: 'get',
+  //   Headers: { 'Content-Type': 'application/json' },
+  // });
+  // if (response.ok) {
+
+  document.location.replace('/survey');
+  // } else {
+  //   alert(response.statusText);
+  // }
 }
-document.querySelector('#save-surv-btn').addEventListener('click', newSurveyHandler)
+newSurveyButton.addEventListener('click', newSurveyHandler);

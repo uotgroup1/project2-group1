@@ -14,10 +14,9 @@ router.get('/', (req, res) => {
     attributes: [
       'id',
       'user_id',
-      'description',
-      'start_date',
-      'end_date',
-      'is_active',
+      'newSurveyName',
+      'newSurveyQuestion',
+      'newSurveyAnswerOption',
     ],
     include: [
       {
@@ -44,10 +43,9 @@ router.get('/:id', (req, res) => {
     attributes: [
       'id',
       'user_id',
-      'description',
-      'start_date',
-      'end_date',
-      'is_active',
+      'newSurveyName',
+      'newSurveyQuestion',
+      'newSurveyAnswerOption',
     ],
     include: [
       {
@@ -86,8 +84,11 @@ router.delete('/:id', (req, res) => {
     });
 });
 router.post('/', (req, res) => {
+  console.log(req.session);
   Survey.create({
-    description: req.body.description,
+    newSurveyName: req.body.newSurveyName,
+    newSurveyQuestion: req.body.newSurveyQuestion,
+    newSurveyAnswerOption: req.body.newSurveyAnswerOption,
     user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))

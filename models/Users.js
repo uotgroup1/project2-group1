@@ -8,8 +8,8 @@ const bcrypt = require('bcrypt');
 // Initialize Product model (table) by extending off Sequelize's Model class
 class Users extends Model {
   checkPassword(loginPw) {
-    return loginPw === this.password;
-    //return bcrypt.compareSync(loginPw, this.password);
+    //return loginPw === this.password;
+    return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
@@ -42,19 +42,13 @@ Users.init(
     },
   },
   {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'users',
-  },
-  {
-    //add hoooks here for password encryption
     hooks: {
+      // set up beforeCreate lifecycle "hook" functionality
       async beforeCreate(newUserData) {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
+
       async beforeUpdate(updatedUserData) {
         updatedUserData.password = await bcrypt.hash(
           updatedUserData.password,
@@ -63,6 +57,11 @@ Users.init(
         return updatedUserData;
       },
     },
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'users',
   }
 );
 

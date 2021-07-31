@@ -21,27 +21,24 @@ Survey.init(
         key: 'id',
       },
     },
-    description: {
+    newSurveyName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    start_date: {
-      type: DataTypes.DATE,
-    },
-    end_date: {
-      type: DataTypes.DATE,
-    },
-    is_active: {
-      type: DataTypes.BOOLEAN,
+    newSurveyQuestion: {
+      type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: true,
+    },
+    newSurveyAnswerOption: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    underscored: true,
+    underscored: false,
     modelName: 'survey',
   }
 );

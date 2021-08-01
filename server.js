@@ -13,7 +13,7 @@ const hbs = exphbs.create({});
 const app = express();
 const PORT = process.env.PORT || 3001;
 const sess = {
-  secret: process.env.SESS_PW,
+  secret: 'project',
   cookie: {},
   resave: false,
   saveUninitialized: true,

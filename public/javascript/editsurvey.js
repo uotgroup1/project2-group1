@@ -38,7 +38,7 @@
 //   .querySelector('#delete-btn')
 //   .addEventListener('click', deleteClickHandler);
 
-const newUpdateButton = document.querySelector('#update-btn');
+const newUpdateButton = document.querySelector('#save-surv-btn');
 
 async function newUpdateHandler(event) {
   event.preventDefault();
@@ -54,7 +54,7 @@ async function newUpdateHandler(event) {
   // });
   // if (response.ok) {
 
-  document.location.replace('/updatesurvey');
+  document.location.replace('/dashboard');
   // } else {
   //   alert(response.statusText);
   // }

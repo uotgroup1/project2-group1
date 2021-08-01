@@ -12,11 +12,12 @@
                             <p> {{id}} : <span> {{newSurveyName}}</span></p>
                         </div>
                         <div class="d-flex upDel-btns">
-                            <button id="view-btn">VIEW</button>
+                            {{!-- <button id="view-btn">VIEW</button> --}}
+                            <a href="/view/{{id}}"> VIEW</a>
                             {{!-- <button id="update-btn{{id}}">UPDATE</button> --}}
                             <a href="/survey/{{id}}">UPDATE</a>
-
-                            <a href="/survey/{{id}}">DELETE</a>
+                           {{!-- <button id="delete-btn">DELETE</button> --}}
+                            <a href="/survey/{{id}}"> DELETE</a>
                         </div>
                     </div>
                     {{/each}}
@@ -35,3 +36,4 @@
 </section>
 <script src="/javascript/addsurvey.js"></script>
 <script src="/javascript/editsurvey.js"></script>
+<script src='/javascript/viewsurvey.js'></script>

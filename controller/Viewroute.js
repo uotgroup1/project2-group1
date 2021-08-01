@@ -6,8 +6,7 @@ const { Answers, Questions, Survey, Users, UserAnswers } = require('../models');
 router.get('/', (req, res) => {
   //res.render('homepage');
   //Send all of the surveys to 'homepage.handlebars' as an object
-  Survey.findAll({
-  })
+  Survey.findAll({})
     .then((dbPostData) => {
       const surveys = dbPostData.map((post) => post.get({ plain: true }));
       res.render('homepage', {
@@ -22,6 +21,14 @@ router.get('/', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('dashboard');
+});
+router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
@@ -75,7 +82,6 @@ router.get('/view/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
 
 router.get('/survey/:id', (req, res) => {
   Survey.findOne({
@@ -148,7 +154,7 @@ router.get('/dashboard', (req, res) => {
   })
     .then((dbPostData) => {
       const surveys = dbPostData.map((post) => post.get({ plain: true }));
-      const user_name =  req.session.username
+      const user_name = req.session.username;
       res.render('dashboard', {
         user_name,
         surveys,

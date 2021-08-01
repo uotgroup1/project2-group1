@@ -125,18 +125,6 @@ router.post('/', (req, res) => {
     });
 });
 router.put('/:id', (req, res) => {
-<<<<<<< HEAD
-  Survey.update({
-    newSurveyName: req.body.newSurveyName,
-    newSurveyQuestion: req.body.newSurveyQuestion,
-    // newSurveyAnswerOption: req.body.newSurveyAnswerOption,
-    Option1: req.body.Option1,
-    Option2: req.body.Option2,
-    Option3: req.body.Option3,
-    Option4: req.body.Option4,
-    user_id: req.session.user_id,
-  },
-=======
   Survey.update(
     {
       newSurveyName: req.body.newSurveyName,
@@ -148,26 +136,17 @@ router.put('/:id', (req, res) => {
       Option4: req.body.Option4,
       user_id: req.session.user_id,
     },
->>>>>>> a825084e93a4732612c328201c12620259885407
     {
       where: {
         id: req.params.id,
       }
     }
   )
-<<<<<<< HEAD
-      .then((dbPostData) => res.json(dbPostData))
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-=======
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
->>>>>>> a825084e93a4732612c328201c12620259885407
 });
 
 module.exports = router;

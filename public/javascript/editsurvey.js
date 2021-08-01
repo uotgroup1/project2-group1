@@ -46,7 +46,7 @@ async function newUpdateHandler(event) {
   const surveyID = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
-  console.log( 'iddddddddddddd' + surveyID);
+  console.log('iddddddddddddd' + surveyID);
 
   const newSurveyName = document.querySelector('#surv-name').value;
   const newSurveyQuestion = document.querySelector('#question').value;
@@ -55,25 +55,6 @@ async function newUpdateHandler(event) {
   const Option3 = document.querySelector('#optionthree').value;
   const Option4 = document.querySelector('#optionfour').value;
 
-<<<<<<< HEAD
-  await fetch(`/api/survey/${surveyID}`, {
-    method: 'PUT',
-    body: JSON.stringify({
-      newSurveyQuestion,
-      newSurveyName,
-      question,
-      Option1,
-      Option2,
-      Option3,
-      Option4,
-    }),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-
-=======
->>>>>>> a825084e93a4732612c328201c12620259885407
   document.location.replace('/dashboard');
   // } else {
   //   alert(response.statusText);

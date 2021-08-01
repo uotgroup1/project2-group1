@@ -13,7 +13,7 @@ const hbs = exphbs.create({});
 const app = express();
 const PORT = process.env.PORT || 3001;
 const sess = {
-  secret: 'asdadasdasd',
+  secret: process.env.SESS_PW,
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -24,11 +24,8 @@ const sess = {
 
 app.use(session(sess));
 
-// Set Handlebars as the default template engine.
-// app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-// app.set('view engine', 'handlebars');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));

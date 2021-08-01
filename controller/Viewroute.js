@@ -38,6 +38,54 @@ router.get('/login', (req, res) => {
   res.render('dashboard');
 });
 
+router.get('/view/:id', (req, res) => {
+  Survey.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: [
+      'id',
+      'user_id',
+      'newSurveyName',
+      'newSurveyQuestion',
+      'Option1',
+      'Option2',
+      'Option3',
+      'Option4',
+    ],
+    include: [
+      {
+        model: Questions,
+      },
+      {
+        model: Users,
+        attributes: ['user_name'],
+      },
+    ],
+  })
+    .then((dbPostData) => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+
+      // serialize the data
+      const survey = dbPostData.get({ plain: true });
+      console.log('dbpostdata', survey);
+      // pass data to template
+      res.render('viewsurvey', {
+        survey,
+        questions: survey.questions,
+        loggedIn: req.session ? req.session.loggedIn : false,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
 router.get('/survey/:id', (req, res) => {
   Survey.findOne({
     where: {
@@ -109,7 +157,9 @@ router.get('/dashboard', (req, res) => {
   })
     .then((dbPostData) => {
       const surveys = dbPostData.map((post) => post.get({ plain: true }));
+      const user_name =  req.session.username
       res.render('dashboard', {
+        user_name,
         surveys,
         loggedIn: req.session ? req.session.loggedIn : false,
       });
@@ -128,5 +178,6 @@ router.get('/updatesurvey', (req, res) => {
   res.render('updatesurvey');
 });
 
-r;
+
+
 module.exports = router;

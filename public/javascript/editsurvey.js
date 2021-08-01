@@ -55,7 +55,6 @@ async function newUpdateHandler(event) {
   const Option3 = document.querySelector('#optionthree').value;
   const Option4 = document.querySelector('#optionfour').value;
 
-<<<<<<< HEAD
   await fetch(`/api/survey/${surveyID}`, {
     method: 'PUT',
     body: JSON.stringify({
@@ -72,8 +71,6 @@ async function newUpdateHandler(event) {
     },
   });
 
-=======
->>>>>>> a825084e93a4732612c328201c12620259885407
   document.location.replace('/dashboard');
   // } else {
   //   alert(response.statusText);

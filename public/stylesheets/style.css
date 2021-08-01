@@ -65,6 +65,7 @@ header img {
 .main-survey-sec {
     margin-top: 3%;
     margin-left: 5%;
+    margin-right: 0%;
     display: inline-block;
     width: 100%
 }
@@ -137,7 +138,6 @@ button:hover {
 }
 .upDel-btns button {
     margin: 10px;
-    padding: 4%;
 }
 
 .login-signup h3,
@@ -302,3 +302,36 @@ footer {
 }
 
 /* FOOTER STYLE END */
+
+/* MEDIA QUERIES START */
+/* MQ's for <=1200px */
+/* .previous-surveys {
+    width: 66.6%;
+}
+
+.create-surv {
+    width: 33.3%;
+} */
+
+/* MQ's for smaller desktop; <=980px */
+@media screen and (max-width: 980) {
+}
+
+
+/* MQ's Tablet <=767 */
+@media screen and (max-width: 767px) {
+    .previous-surveys {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .create-surv {
+        width: 50%;
+    }
+}
+
+/* MQ's Mobile */
+@media screen and (max-width: 575px) {
+}
+
+

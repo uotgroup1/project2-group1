@@ -23,8 +23,8 @@
         <nav class="navigation">
             <!-- {{#if loggedIn}} -->
             <button id="dashboard-btn" class="dashboard-btn">DASHBOARD</a>
-            <button id="logout-btn" class="logout-btn">LOGOUT</button>
-            <!-- {{/if}} -->
+                <button id="logout-btn" class="logout-btn">LOGOUT</button>
+                <!-- {{/if}} -->
         </nav>
         <img src="../../public/assets/images/SurveyDonkey3_coloredWhiteGreys.png" alt="">
     </header>
@@ -36,42 +36,21 @@
                 <div class="row">
                     <div class="col-8 previous-surveys">
                         <h2>P<span>REVIOUSLY</span> C<span>REATED</span> S<span>URVEYS</span></h2>
-                        <p>by Donkey Survey</p>
+                        <p>by {{user.username}}</p>
                         <!-- SURVEY (X) probably need for loop in js-->
                         <div class="row">
+                            {{#each surveys as |survey|}}
                             <div class="prev-survey-box">
                                 <div class="d-flex">
-                                    <p>Survey X: <span>This survey is about your favourite dragons.</span></p>
+                                    <p> {{survey.id}}: <span> {{survey.description}}</span></p>
                                 </div>
                                 <div class="d-flex upDel-btns">
+                                    <button id="view-btn">VIEW</button>
                                     <button id="update-btn">UPDATE</button>
                                     <button id="delete-btn">DELETE</button>
                                 </div>
                             </div>
-                        </div>
-                        <!-- SURVEY (Y) probably need for loop in js-->
-                        <div class="row">
-                            <div class="prev-survey-box">
-                                <div class="d-flex">
-                                    <p>Survey Y: <span>This survey is about mythical beings.</span></p>
-                                </div>
-                                <div class="d-flex upDel-btns">
-                                    <button id="update-btn">UPDATE</button>
-                                    <button id="delete-btn">DELETE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- SURVEY (Z) probably need for loop in js-->
-                        <div class="row">
-                            <div class="prev-survey-box">
-                                <div class="d-flex">
-                                    <p>Survey Z: <span>This survey is about what sloths do.</span></p>
-                                </div>
-                                <div class="d-flex upDel-btns">
-                                    <button id="update-btn">UPDATE</button>
-                                    <button id="delete-btn">DELETE</button>
-                                </div>
-                            </div>
+                            {{/each}}
                         </div>
                     </div>
 

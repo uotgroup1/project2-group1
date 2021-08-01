@@ -1,66 +1,67 @@
- <div class="container main-survey-sec">
-        <div class="row">
-          <div class="col-8 explore-surveys">
-            <h2>E<span>XPLORE</span> S<span>URVEYS</span></h2>
+<div class="container main-survey-sec">
+  <div class="row explore-surveys">
+    <h2>E<span>XPLORE</span> S<span>URVEYS</span></h2>
 
-            <!-- SURVEY (X) probably need for loop in js-->
-            <div class="row">
-                {{#each surveys as |survey|}}
-              <div class="survey-box">
-                <p> {{id}}: <span> {{description}}</span></p>
-                <button id="start-btn" onclick="/homepage/takesurvey/{{id}}">START</button>
-              </div>
-              {{/each}}
-            </div>
-            
-
-          <!-- LOGIN FORM -->
-          <div class="col-4 login-signup">
-            <section class="login-sec">
-              <h3>W<span>ANT TO</span> M<span>AKE A</span> S<span>URVEY</span>?</h3>
-              <p>LOGIN HERE!</p>
-              <form class="login-form">
-                <div>
-                  <label for="email-login">Email:</label>
-                  <input type="text" id="email-login" />
-                </div>
-                <div>
-                  <label for="password-login">password:</label>
-                  <input type="password" id="password-login" />
-                </div>
-                <div>
-                  <button type="submit" id="login-btn">LOGIN</button>
-                </div>
-              </form>
-            </section>
-
-            <br>
-
-            <!-- SIGN UP FORM -->
-            <section class="signup-sec">
-              <h3>F<span>IRST</span> T<span>IME</span> H<span>ERE</span>?</h3>
-              <p>SIGN UP BELOW!</p>
-
-              <form class="signup-form">
-                <div>
-                  <label for="username-signup">Username:</label>
-                  <input type="text" id="username-signup" />
-                </div>
-                <div>
-                  <label for="email-signup">Email:</label>
-                  <input type="text" id="email-signup" />
-                </div>
-                <div>
-                  <label for="password-signup">Password:</label>
-                  <input type="password" id="password-signup" />
-                </div>
-                <div>
-                  <button type="submit" id="signup-btn">SIGN UP</button>
-                </div>
-              </form>
-            </section>
-          </div>
-        </div>
+    <!-- SURVEY (X) probably need for loop in js-->
+    <div class="col-8">
+      {{#each surveys as |survey|}}
+      <div class="survey-box">
+        <p> {{id}}: <span> {{description}}</span></p>
+        <button id="start-btn" onclick="/homepage/takesurvey/{{id}}">START</button>
       </div>
+      {{/each}}
+    </div>
 
-      <script src="../javascript/login.js"></script>
+    <!-- LOGIN FORM -->
+    <div class="col-4 login-signup">
+
+      <section class="login-sec">
+        <h3>W<span>ANT TO</span> M<span>AKE A</span> S<span>URVEY</span>?</h3>
+        <p>LOGIN HERE!</p>
+
+        <form class="login-form">
+          <div>
+            <label for="email-login">Email:</label>
+            <input type="text" id="email-login" />
+          </div>
+
+          <div>
+            <label for="password-login">password:</label>
+            <input type="password" id="password-login" />
+          </div>
+
+          <div>
+            <button type="submit" id="login-btn">LOGIN</button>
+          </div>
+        </form>
+      </section>
+
+      <br>
+
+      <!-- SIGN UP FORM -->
+      <section class="signup-sec">
+        <h3>F<span>IRST</span> T<span>IME</span> H<span>ERE</span>?</h3>
+        <p>SIGN UP BELOW!</p>
+
+        <form class="signup-form">
+          <div>
+            <label for="username-signup">Username:</label>
+            <input type="text" id="username-signup" />
+          </div>
+          <div>
+            <label for="email-signup">Email:</label>
+            <input type="text" id="email-signup" />
+          </div>
+          <div>
+            <label for="password-signup">Password:</label>
+            <input type="password" id="password-signup" />
+          </div>
+          <div>
+            <button type="submit" id="signup-btn">SIGN UP</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <script src="../javascript/login.js"></script>

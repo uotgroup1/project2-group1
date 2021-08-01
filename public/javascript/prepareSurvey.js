@@ -5,7 +5,6 @@ async function newSurveyHandler(event) {
 
   const newSurveyName = document.querySelector('#surv-name').value.trim();
   const newSurveyQuestion = document.querySelector('#question').value.trim();
-  // const newSurveyAnswerOption = document.querySelector('#option').value.trim();
   const Option1 = document.querySelector('#optionone').value.trim();
   const Option2 = document.querySelector('#optiontwo').value.trim();
   const Option3 = document.querySelector('#optionthree').value.trim();

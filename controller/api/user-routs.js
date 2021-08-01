@@ -1,10 +1,8 @@
 const router = require('express').Router();
 const {
   Answers,
-  Questions,
   Survey,
-  Users,
-  UserAnswers,
+  Users
 } = require('../../models');
 
 // get all users

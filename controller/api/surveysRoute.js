@@ -4,8 +4,7 @@ const {
   Answers,
   Questions,
   Survey,
-  Users,
-  UserAnswers,
+  Users
 } = require('../../models');
 
 // GET route for getting all of the surveys
@@ -51,6 +50,30 @@ router.get('/dashboard', (req, res) => {
     .catch((err) => {
       console.log(err);
       res.status(500).json(dbPostData);
+    });
+});
+
+router.get('/results', (req, res) => {
+  console.log(req.session);
+  Answers.findAll({
+  })
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.post('/results', (req, res) => {
+  console.log(req.session);
+  Answers.create({
+    survey_id: req.body.survey_id,
+    answer: req.body.answer,
+  })
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
@@ -124,6 +147,7 @@ router.post('/', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 router.put('/:id', (req, res) => {
   Survey.update(
     {

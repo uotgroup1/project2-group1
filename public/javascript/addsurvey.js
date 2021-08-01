@@ -13,7 +13,7 @@ async function newSurveyHandler(event) {
   //   Headers: { 'Content-Type': 'application/json' },
   // });
   // if (response.ok) {
-
+  
   document.location.replace('/survey');
   // } else {
   //   alert(response.statusText);

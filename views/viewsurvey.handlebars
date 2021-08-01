@@ -7,25 +7,25 @@
         <div class="row new-survey-box">
              <label for="view-question" class="form-label">{{survey.newSurveyQuestion}}</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadio1" id="flexRadio1">
+                <input class="form-check-input" type="radio" name="flexRadio" id="flexRadio1" value={{survey.Option1}}>
                 <label class="form-check-label" for="flexRadioDefault1">
                     {{survey.Option1}}
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadio2" id="flexRadio2" >
+                <input class="form-check-input" type="radio" name="flexRadio" id="flexRadio2" value={{survey.Option2}}>
                 <label class="form-check-label" for="flexRadioDefault2">
                     {{survey.Option2}}
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadio3" id="flexRadio3" >
+                <input class="form-check-input" type="radio" name="flexRadio" id="flexRadio3" value={{survey.Option3}}>
                 <label class="form-check-label" for="flexRadioDefault2">
                    {{survey.Option3}}
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadio4" id="flexRadio4">
+                <input class="form-check-input" type="radio" name="flexRadio" id="flexRadio4" value={{survey.Option4}}>
                 <label class="form-check-label" for="flexRadioDefault2">
                    {{survey.Option4}}
                 </label>
@@ -41,3 +41,4 @@
 </section>
 <br />
 <script src='/javascript/viewsurvey.js'></script>
+<script src='/javascript/savesurvey.js'></script>

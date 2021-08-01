@@ -14,11 +14,11 @@ Answers.init(
       autoIncrement: true,
       primaryKey: true
     },
-    question_id: {
+    survey_id: {
       type:DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'questions',
+        model: 'survey',
         key: 'id'
       }
     },

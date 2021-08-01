@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Answers, Questions, Survey, Users, UserAnswers } = require('../models');
+const { Answers, Survey, Users, UserAnswers } = require('../models');
 
 // get all surveys for homepage
 router.get('/', (req, res) => {
@@ -54,9 +54,6 @@ router.get('/view/:id', (req, res) => {
     ],
     include: [
       {
-        model: Questions,
-      },
-      {
         model: Users,
         attributes: ['user_name'],
       },
@@ -99,9 +96,6 @@ router.get('/survey/:id', (req, res) => {
       'Option4',
     ],
     include: [
-      {
-        model: Questions,
-      },
       {
         model: Users,
         attributes: ['user_name'],

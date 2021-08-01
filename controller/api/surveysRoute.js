@@ -37,6 +37,33 @@ router.get('/', (req, res) => {
     res.json(dbPost);
   });
 });
+router.get('/dashboard', (req, res) => {
+  Survey.findAll({
+    attributes: [
+      'id',
+      'user_id',
+      'newSurveyName',
+      'newSurveyQuestion',
+      'Option1',
+      'Option2',
+      'Option3',
+      'Option4',
+    ],
+    include: [
+      {
+        model: Users,
+        attributes: ['user_name'],
+      },
+    ],
+  })
+    .then((dbPost) => {
+      res.json(dbPost);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(dbPostData);
+    });
+});
 
 router.get('/:id', (req, res) => {
   Survey.findOne({

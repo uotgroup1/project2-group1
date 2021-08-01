@@ -106,6 +106,12 @@ router.get('/dashboard', (req, res) => {
       'Option3',
       'Option4',
     ],
+    include: [
+      {
+        model: Users,
+        attributes: ['user_name'],
+      },
+    ],
   })
     .then((dbPostData) => {
       const surveys = dbPostData.map((post) => post.get({ plain: true }));
@@ -128,5 +134,4 @@ router.get('/updatesurvey', (req, res) => {
   res.render('updatesurvey');
 });
 
-r;
 module.exports = router;

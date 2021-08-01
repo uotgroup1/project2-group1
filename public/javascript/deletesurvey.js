@@ -5,17 +5,17 @@ async function deleteSurveyHandler(event) {
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ]; //once we set up the id we can traverse through the DOM to get the ID?
-  const response = await fetch(`api/surveys/${id}`, {
+  const response = await fetch(`api/survey/${id}`, {
     //which survey we want to delete
     method: 'DELETE',
   });
   if (response.ok) {
-    document.location.replace('/userDashboard'); //if response is ok take them back to their own dashboard
+    document.location.replace('/Dashboard'); //if response is ok take them back to their own dashboard
   } else {
     alert(response.statusText);
   }
 }
 
 document
-  .querySelector('#delete-btn')
+  .querySelector('#del-surv-btn')
   .addEventListener('click', deleteSurveyHandler);

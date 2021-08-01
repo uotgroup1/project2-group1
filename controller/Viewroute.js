@@ -6,7 +6,8 @@ const { Answers, Questions, Survey, Users, UserAnswers } = require('../models');
 router.get('/', (req, res) => {
   //res.render('homepage');
   //Send all of the surveys to 'homepage.handlebars' as an object
-  Survey.findAll({})
+  Survey.findAll({
+  })
     .then((dbPostData) => {
       const surveys = dbPostData.map((post) => post.get({ plain: true }));
       res.render('homepage', {
@@ -75,6 +76,7 @@ router.get('/view/:id', (req, res) => {
     });
 });
 
+
 router.get('/survey/:id', (req, res) => {
   Survey.findOne({
     where: {
@@ -112,7 +114,6 @@ router.get('/survey/:id', (req, res) => {
       // pass data to template
       res.render('updatesurvey', {
         survey,
-        user_name: req.session.user_name,
         questions: survey.questions,
         loggedIn: req.session ? req.session.loggedIn : false,
       });
@@ -144,16 +145,10 @@ router.get('/dashboard', (req, res) => {
       'Option3',
       'Option4',
     ],
-    include: [
-      {
-        model: Users,
-        attributes: ['user_name'],
-      },
-    ],
   })
     .then((dbPostData) => {
       const surveys = dbPostData.map((post) => post.get({ plain: true }));
-      const user_name = req.session.username;
+      const user_name =  req.session.username
       res.render('dashboard', {
         user_name,
         surveys,

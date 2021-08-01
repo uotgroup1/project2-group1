@@ -20,23 +20,12 @@ router.get('/', (req, res) => {
       'Option2',
       'Option3',
       'Option4',
-    ],
-    // include: [
-    //   {
-    //     model: Questions,
-    //     attributes: ['id', 'survey_ID', 'question_type', 'question'],
-    //     include: [
-    //       {
-    //         model: Answers,
-    //         //attributes: [],
-    //       },
-    //     ],
-    //   },
-    // ],
+    ]
   }).then((dbPost) => {
     res.json(dbPost);
   });
 });
+
 router.get('/dashboard', (req, res) => {
   Survey.findAll({
     attributes: [
@@ -64,7 +53,6 @@ router.get('/dashboard', (req, res) => {
       res.status(500).json(dbPostData);
     });
 });
-
 
 router.get('/:id', (req, res) => {
   Survey.findOne({
@@ -117,6 +105,7 @@ router.delete('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 router.post('/', (req, res) => {
   console.log(req.session);
   Survey.create({
@@ -145,12 +134,13 @@ router.put('/:id', (req, res) => {
     Option3: req.body.Option3,
     Option4: req.body.Option4,
     user_id: req.session.user_id,
-  }),
+  },
     {
       where: {
         id: req.params.id,
-      },
+      }
     }
+  )
       .then((dbPostData) => res.json(dbPostData))
       .catch((err) => {
         console.log(err);

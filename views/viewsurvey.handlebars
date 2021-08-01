@@ -1,32 +1,33 @@
 <section>
     <div class="container main-survey-sec">
         <div class="update-surveys">
-            <h2>D<span>o</span> T<span>the</span> S<span>URVEY</span></h2>
+            <h2>D<span>o</span> T<span>he</span> S<span>URVEY</span></h2>
         </div>
     </div>
         <div class="row new-survey-box">
+             <label for="view-question" class="form-label">{{survey.newSurveyQuestion}}</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="flexRadio1" id="flexRadio1">
                 <label class="form-check-label" for="flexRadioDefault1">
-                    Default radio
+                    {{survey.Option1}}
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <input class="form-check-input" type="radio" name="flexRadio2" id="flexRadio2" >
                 <label class="form-check-label" for="flexRadioDefault2">
-                    Default checked radio
+                    {{survey.Option2}}
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <input class="form-check-input" type="radio" name="flexRadio3" id="flexRadio3" >
                 <label class="form-check-label" for="flexRadioDefault2">
-                    Default checked radio
+                   {{survey.Option3}}
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <input class="form-check-input" type="radio" name="flexRadio4" id="flexRadio4">
                 <label class="form-check-label" for="flexRadioDefault2">
-                    Default checked radio
+                   {{survey.Option4}}
                 </label>
             </div>
             <div class="col-4">

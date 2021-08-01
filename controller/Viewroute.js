@@ -4,29 +4,21 @@ const { Answers, Questions, Survey, Users, UserAnswers } = require('../models');
 
 // get all surveys for homepage
 router.get('/', (req, res) => {
-  res.render('homepage');
+  //res.render('homepage');
   //Send all of the surveys to 'homepage.handlebars' as an object
-  // Survey.findAll({
-  //   attributes: [
-  //     'id',
-  //     'user_id',
-  //     'description',
-  //     'start_date',
-  //     'end_date',
-  //     'is_active',
-  //   ],
-  // })
-  //   .then((dbPostData) => {
-  //     const surveys = dbPostData.map((post) => post.get({ plain: true }));
-  //     res.render('homepage', {
-  //       surveys,
-  //       loggedIn: req.session ? req.session.loggedIn : false,
-  //     });
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //     res.status(500).json(dbPostData);
-  //   });
+  Survey.findAll({
+  })
+    .then((dbPostData) => {
+      const surveys = dbPostData.map((post) => post.get({ plain: true }));
+      res.render('homepage', {
+        surveys,
+        loggedIn: req.session ? req.session.loggedIn : false,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 router.get('/login', (req, res) => {
@@ -75,7 +67,6 @@ router.get('/view/:id', (req, res) => {
       // pass data to template
       res.render('viewsurvey', {
         survey,
-        questions: survey.questions,
         loggedIn: req.session ? req.session.loggedIn : false,
       });
     })

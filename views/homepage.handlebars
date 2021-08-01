@@ -7,14 +7,15 @@
         {{#each surveys as |survey|}}
           <div class="survey-box">
             <p> {{survey.id}}: <span> {{survey.newSurveyName}}</span></p>
-             <a href="/view/{{survey.id}}"> START</a>
+             <a href="/view/{{survey.id}}"><i class="material-icons-sharp">play_arrow</i> START</a>
             {{!-- <button id="start-btn" onclick="/takesurvey/{{survey.id}}">START</button> --}}
           </div>
         {{/each}}
-      </div>
+      </div> 
     </div> 
       <!-- LOGIN FORM -->
       <div class="col-4 login-signup">
+        {{#unless loggedIn}}
         <section class="login-sec">
           <h3>W<span>ANT TO</span> M<span>AKE A</span> S<span>URVEY</span>?</h3>
           <p>LOGIN HERE!</p>
@@ -55,8 +56,10 @@
             </div>
           </form>
         </section>
+      {{/unless}}
     </div>
   </div>
 </div>
 
 <script src="../javascript/login.js"></script>
+<script src="/javascript/logout.js"></script>

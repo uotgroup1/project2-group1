@@ -10,7 +10,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href='/stylesheets/style.css'>
     <link rel="shortcut icon" type="image/png" href="/assets/images/SurveyDonkey3_coloredWhiteGreys.png"> 
-
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
 </head>
 <body>
       <header>
@@ -18,11 +18,11 @@
             <a href="/">SURVEY DONKEY</a>
         </h1>
         <nav class="navigation">
-            <!-- {{#if loggedIn}} -->
-            {{!-- <button id="dashboard-btn" class="dashboard-btn" >DASHBOARD</a> --}}
-            <a href="/dashboard">Dashboard</a>
-                <button id="logout-btn" class="logout-btn">LOGOUT</button>
-                <!-- {{/if}} -->
+            {{#if loggedIn}}
+                {{!-- <button id="dashboard-btn" class="dashboard-btn" >DASHBOARD</a> --}}
+                <a href="/dashboard"><i class="material-icons-sharp">space_dashboard</i> Dashboard</a>
+                <button id="logout-btn" class="logout-btn"><i class="material-icons-sharp">logout</i>Logout</button>
+            {{/if}}
         </nav>
         <img src="/assets/images/SurveyDonkey3_coloredWhiteGreys.png" alt="">
     </header>

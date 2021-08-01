@@ -134,5 +134,27 @@ router.post('/', (req, res) => {
       res.status(500).json(err);
     });
 });
+router.put('/:id', (req, res) => {
+  Survey.update({
+    newSurveyName: req.body.newSurveyName,
+    newSurveyQuestion: req.body.newSurveyQuestion,
+    // newSurveyAnswerOption: req.body.newSurveyAnswerOption,
+    Option1: req.body.Option1,
+    Option2: req.body.Option2,
+    Option3: req.body.Option3,
+    Option4: req.body.Option4,
+    user_id: req.session.user_id,
+  }),
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+      .then((dbPostData) => res.json(dbPostData))
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+});
 
 module.exports = router;

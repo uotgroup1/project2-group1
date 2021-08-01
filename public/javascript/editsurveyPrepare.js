@@ -6,14 +6,23 @@ const surveyID = window.location.toString().split('/')[
 const editFormHandler = async function (event) {
   event.preventDefault();
 
-  const title = document.querySelector('surv-name').value;
+  const surveyName = document.querySelector('#surv-name').value;
+  const question = document.querySelector('#question').value;
+  const Option1 = document.querySelector('#optionone').value;
+  const Option2 = document.querySelector('#optiontwo').value;
+  const Option3 = document.querySelector('#optionthree').value;
+  const Option4 = document.querySelector('#optionfour').value;
   const body = document.querySelector('question').value;
 
-  await fetch(`/api/post/${surveyID}`, {
+  await fetch(`/api/survey/${surveyID}`, {
     method: 'PUT',
     body: JSON.stringify({
-      title,
-      body,
+      surveyName,
+      question,
+      Option1,
+      Option2,
+      Option3,
+      Option4,
     }),
     headers: {
       'Content-Type': 'application/json',
@@ -24,7 +33,7 @@ const editFormHandler = async function (event) {
 };
 
 const deleteClickHandler = async function () {
-  await fetch(`/api/post/${surveyID}`, {
+  await fetch(`/api/survey/${surveyID}`, {
     method: 'DELETE',
   });
 

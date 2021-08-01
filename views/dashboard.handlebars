@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-8 previous-surveys">
                 <h2>P<span>REVIOUSLY</span> C<span>REATED</span> S<span>URVEYS</span></h2>
-                <p>by {{Users.user_name}}</p>
+                <p>by {{user_name}}</p>
                 <!-- SURVEY (X) probably need for loop in js-->
                 <div class="row">
                     {{#each surveys as |survey|}}
@@ -16,7 +16,7 @@
                             {{!-- <button id="update-btn{{id}}">UPDATE</button> --}}
                             <a href="/survey/{{id}}">UPDATE</a>
 
-                            <button id="delete-btn">DELETE</button>
+                            <a href="/survey/{{id}}">DELETE</a>
                         </div>
                     </div>
                     {{/each}}

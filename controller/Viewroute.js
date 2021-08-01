@@ -75,6 +75,7 @@ router.get('/survey/:id', (req, res) => {
       // pass data to template
       res.render('updatesurvey', {
         survey,
+        user_name: req.session.user_name,
         questions: survey.questions,
         loggedIn: req.session ? req.session.loggedIn : false,
       });
@@ -116,6 +117,7 @@ router.get('/dashboard', (req, res) => {
     .then((dbPostData) => {
       const surveys = dbPostData.map((post) => post.get({ plain: true }));
       res.render('dashboard', {
+        user_name: req.session.username,
         surveys,
         loggedIn: req.session ? req.session.loggedIn : false,
       });

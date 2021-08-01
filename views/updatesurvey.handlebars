@@ -1,0 +1,54 @@
+<section>
+    <div class="container main-survey-sec">
+        <div class="update-surveys">
+            <h2>U<span>PDATE</span> Y<span>OUR</span> S<span>URVEY</span></h2>
+        </div>
+    </div>
+        <div class="row new-survey-box">
+            <form class="col-8 new-survey-form">
+                <label for="surv-name">Enter your survey name: </label>
+                <input type="text" name="surv-name" id="surv-name" class="form-input" value={{survey.newSurveyName}}/>
+                <label for="question">Question:</label>
+                <textarea name="question" id="question" class="form-input">{{survey.newSurveyQuestion}}</textarea>
+                <label for="option">Option 1: </label>
+<<<<<<< HEAD
+                <input type="text" name="option" id="optionone" class="form-input" value={{survey.Option1}}/>
+                <label for="option">Option 2: </label>
+                <input type="text" name="option" id="optiontwo" class="form-input" value={{survey.Option2}}/>
+                <label for="option">Option 3: </label>
+                <input type="text" name="option" id="optionthree" class="form-input"value={{survey.Option3}} />
+                <label for="option">Option 4: </label>
+                <input type="text" name="option" id="optionfour" class="form-input" value={{survey.Option4}}/>
+=======
+                <input type="text" name="option" id="optionone" class="form-input" value={{survey.Option1}} />
+                <label for="option">Option 2: </label>
+                <input type="text" name="option" id="optiontwo" class="form-input" value={{survey.Option2}} />
+                <label for="option">Option 3: </label>
+                <input type="text" name="option" id="optionthree" class="form-input" value={{survey.Option3}}/>
+                <label for="option">Option 4: </label>
+                <input type="text" name="option" id="optionfour" class="form-input" value={{survey.Option4}} />
+>>>>>>> a825084e93a4732612c328201c12620259885407
+            </form>
+            <div class="col-4 next-steps">
+                <h3>Click below to Save Survey</h3>
+                <br>
+                {{!-- <button class="addQuestion" id="add-quest-btn">Add Question</button>
+                <button id="addOpt-btn">Add Option</button> --}} 
+                <button type="submit" id="save-surv-btn">Save Survey</button>
+<<<<<<< HEAD
+                <button type="submit" id="del-surv-btn">Delete Survey</button>
+=======
+                <button type="submit" id="delete-surv-btn">Delete Survey</button>
+>>>>>>> a825084e93a4732612c328201c12620259885407
+            </div>
+        </div>
+    </div>
+</section>
+<br />
+<<<<<<< HEAD
+<script src='/javascript/editsurvey.js'></script>
+=======
+{{!-- <script src='/javascript/editsurvey.js'></script> --}}
+<script src='/javascript/editsurveyPrepare.js'></script>
+>>>>>>> a825084e93a4732612c328201c12620259885407
+<script src='/javascript/deletesurvey.js'></script>

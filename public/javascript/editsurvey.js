@@ -1,26 +1,82 @@
 //edit survey fxn
-async function editSurveyHandler (event) {
-event.preventDefault()
-const titleId = ['traverse here through the DOM to get the ID of the question']
-const currentTitle = document.querySelector(`#${titleId}`).value().trim()
-const questionId = ['traverse here through the DOM to get the ID of the question']
-const currentQuestion = document.querySelector(`#${questionId}`).value().trim()
-const AnswerId = ['traverse here through the DOM to get the ID of the question']
-const currentAnswer = document.querySelector(`#${AnswerId}`).value().trim()
+// const surveyID = window.location.toString().split('/')[
+//   window.location.toString().split('/').length - 1
+// ];
 
-const response = await fetch('', {
-method:'PUT',
-body:JSON.stringify({
-    currentTitle,currentQuestion,currentAnswer
-}),
-Headers:{ 'Content-Type': 'application/json'}
-})
-if(response.ok) {
-    document.location.replace('/userDashboard')
-}
-else {
-    alert(response.statusText)
-}
-}
+// const editFormHandler = async function (event) {
+//   event.preventDefault();
 
-document.querySelector('#save-btn').addEventListener('click', editSurveyHandler)
+//   const title = document.querySelector('input[name="post-title"]').value;
+//   const body = document.querySelector('textarea[name="post-body"]').value;
+
+//   await fetch(`/api/post/${surveyID}`, {
+//     method: 'PUT',
+//     body: JSON.stringify({
+//       title,
+//       body,
+//     }),
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//   });
+
+//   document.location.replace('/dashboard');
+// };
+
+// const deleteClickHandler = async function () {
+//   await fetch(`/api/post/${surveyID}`, {
+//     method: 'DELETE',
+//   });
+
+//   document.location.replace('/dashboard');
+// };
+
+// document
+//   .querySelector('#update-btn')
+//   .addEventListener('submit', editFormHandler);
+// document
+//   .querySelector('#delete-btn')
+//   .addEventListener('click', deleteClickHandler);
+
+const newUpdateButton = document.querySelector('#save-surv-btn');
+
+async function newUpdateHandler(event) {
+  event.preventDefault();
+
+  const surveyID = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
+  console.log( 'iddddddddddddd' + surveyID);
+
+  const newSurveyName = document.querySelector('#surv-name').value;
+  const newSurveyQuestion = document.querySelector('#question').value;
+  const Option1 = document.querySelector('#optionone').value;
+  const Option2 = document.querySelector('#optiontwo').value;
+  const Option3 = document.querySelector('#optionthree').value;
+  const Option4 = document.querySelector('#optionfour').value;
+
+<<<<<<< HEAD
+  await fetch(`/api/survey/${surveyID}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      newSurveyQuestion,
+      newSurveyName,
+      question,
+      Option1,
+      Option2,
+      Option3,
+      Option4,
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+=======
+>>>>>>> a825084e93a4732612c328201c12620259885407
+  document.location.replace('/dashboard');
+  // } else {
+  //   alert(response.statusText);
+  // }
+}
+newUpdateButton.addEventListener('click', newUpdateHandler);

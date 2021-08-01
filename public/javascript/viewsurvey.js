@@ -1,6 +1,6 @@
-const newSurveyButton = document.querySelector('#start-here-btn');
+const newViewButton = document.querySelector('#view-btn');
 
-async function newSurveyHandler(event) {
+async function viewSurveyHandler(event) {
   event.preventDefault();
 
   console.log('Test');
@@ -14,9 +14,9 @@ async function newSurveyHandler(event) {
   // });
   // if (response.ok) {
 
-  document.location.replace('/survey');
+  document.location.replace('/viewsurvey');
   // } else {
   //   alert(response.statusText);
   // }
 }
-newSurveyButton.addEventListener('click', newSurveyHandler);
+newViewButton.addEventListener('click', viewSurveyHandler);

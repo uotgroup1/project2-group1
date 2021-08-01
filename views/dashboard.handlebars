@@ -1,0 +1,44 @@
+<section>
+    <div class="container main-survey-sec">
+        <div class="row">
+            <div class="col-8 previous-surveys">
+                <h2>P<span>REVIOUSLY</span> C<span>REATED</span> S<span>URVEYS</span></h2>
+                <p>by {{user_name}}</p>
+                <!-- SURVEY (X) probably need for loop in js-->
+                <div class="row">
+                    {{#each surveys as |survey|}}
+                    <div class="prev-survey-box">
+                        <div class="d-flex">
+                            <p> {{id}} : <span> {{newSurveyName}}</span></p>
+                        </div>
+                        <div class="d-flex upDel-btns">
+                            {{!-- <button id="view-btn">VIEW</button> --}}
+                            <a href="/view/{{id}}"> VIEW</a>
+                            {{!-- <button id="update-btn{{id}}">UPDATE</button> --}}
+                            <a href="/survey/{{id}}">UPDATE</a>
+                           {{!-- <button id="delete-btn">DELETE</button> --}}
+                            <a href="/api/survey/{{id}}"> DELETE</a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+
+            <!-- CREATE NEW SURVEY FORM -->
+            <div class="col-4 create-surv">
+                <section class="create-sec">
+                    <h3>W<span>ANT TO</span> C<span>REATE A</span> N<span>EW</span> S<span>URVEY</span>?</h3>
+                    <button type="submit" class="newsurvey-btn" id="start-here-btn">START HERE</button>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="/javascript/addsurvey.js"></script>
+<script src="/javascript/editsurvey.js"></script>
+<script src='/javascript/viewsurvey.js'></script>
+<<<<<<< HEAD
+<script src='/javascript/deletesurvey.js'></script>
+=======
+<script src="/javascript/deletesurvey.js"></script>
+>>>>>>> a825084e93a4732612c328201c12620259885407

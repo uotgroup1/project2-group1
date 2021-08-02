@@ -46,12 +46,12 @@ ___
 
 ## Credits
 * Completed by: 
-    * [Shannon Nell](https://github.com/ShannonNell)
-    * [Abdul Khalil](https://github.com/absk786)
     * [Farnoush Yousefi](https://github.com/FarnoushYousefi)
     * [Zohaib Ali](https://github.com/szali3)
+    * [Shannon Nell](https://github.com/ShannonNell)
     * [Mayuran](https://github.com/mayuranswee23)
     * [Aashir Javed](https://github.com/aashir104)
+    * [Abdul Khalil](https://github.com/absk786)
 ___
 
 ## License
@@ -97,3 +97,5 @@ THEN I can see the results of the survey taken thus far
 - Multiple versions of survey types
 - Visual representation of survey results
 - API to email surveys for marketing purposes
+## Deployed Link
+https://obscure-river-98687.herokuapp.com/dashboard

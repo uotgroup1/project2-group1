@@ -290,3 +290,71 @@ footer {
 }
 
 /* FOOTER STYLE END */
+
+/* MEDIA QUERIES START */
+/* MQ's for smaller desktop; <=980px */
+@media screen and (max-width: 980) {
+    .main-survey-sec {
+        width: 85%;
+    }
+    .login-signup {
+        width: 50%;
+    }
+
+    .survey-option {
+        width: 100%;
+    }
+}
+
+
+/* MQ's Tablet <=767 */
+@media screen and (max-width: 767px) {
+    .previous-surveys {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .create-surv {
+        width: 50%;
+    }
+}
+
+/* MQ's Mobile */
+@media screen and (max-width: 575px) {
+    .new-survey-form, 
+    .next-steps {
+        width: 85%;
+    }
+
+    .next-steps {
+        border-left: none;
+        border-top: solid 5px var(--fifth-white);
+    }
+
+    .next-steps h3 {
+        padding: 2%;
+    }
+
+    #add-quest-btn, 
+    #addOpt-btn,
+    #save-surv-btn,
+    #delete-surv-btn {
+        font-size: 14px;
+    }
+
+    .navigation, header h1 {
+        margin: 0 auto;
+    }
+
+    .explore-surveys {
+        width: 85%;
+    }
+
+    .login-signup {
+        width: 50%;
+    }
+
+    .main-survey-sec {
+        margin: 0 auto;
+    }
+}

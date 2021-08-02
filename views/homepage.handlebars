@@ -6,7 +6,7 @@
       <div class="row">
         {{#each surveys as |survey|}}
           <div class="survey-box">
-            <p> {{survey.id}}: <span> {{survey.newSurveyName}}</span></p>
+            <p>{{survey.newSurveyName}}</p>
              <a href="/view/{{survey.id}}" class="btn btn-light"><i class="material-icons-sharp">play_arrow</i> START</a>
             {{!-- <button id="start-btn" onclick="/takesurvey/{{survey.id}}">START</button> --}}
           </div>

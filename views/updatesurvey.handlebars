@@ -7,17 +7,17 @@
         <div class="row new-survey-box">
             <form class="col-7 new-survey-form">
                 <label for="surv-name">Enter your survey name: </label>
-                <input type="text" name="surv-name" id="surv-name" class="form-control" value={{survey.newSurveyName}}/>
+                <input type="text" name="surv-name" id="surv-name" class="form-control" value="{{survey.newSurveyName}}"/>
                 <label for="question">Question:</label>
-                <textarea name="question" id="question" class="form-control">{{survey.newSurveyQuestion}}</textarea>
+                <textarea name="question" id="question" class="form-control">"{{survey.newSurveyQuestion}}"</textarea>
                 <label for="option">Option 1: </label>
-                <input type="text" name="option" id="optionone" class="form-control" value={{survey.Option1}} />
+                <input type="text" name="option" id="optionone" class="form-control" value="{{survey.Option1}}"/>
                 <label for="option">Option 2: </label>
-                <input type="text" name="option" id="optiontwo" class="form-control" value={{survey.Option2}} />
+                <input type="text" name="option" id="optiontwo" class="form-control" value="{{survey.Option2}}"/>
                 <label for="option">Option 3: </label>
-                <input type="text" name="option" id="optionthree" class="form-control" value={{survey.Option3}}/>
+                <input type="text" name="option" id="optionthree" class="form-control" value="{{survey.Option3}}"/>
                 <label for="option">Option 4: </label>
-                <input type="text" name="option" id="optionfour" class="form-control" value={{survey.Option4}} />
+                <input type="text" name="option" id="optionfour" class="form-control" value="{{survey.Option4}}"/>
             </form>
             <div class="col-4 next-steps">
                 <h3>Click below to Save Survey</h3>
@@ -30,7 +30,7 @@
         </div>
     </div>
 </section>
-<br />
+<br/>
 {{!-- <script src='/javascript/editsurvey.js'></script> --}}
 <script src='/javascript/editsurveyPrepare.js'></script>
 <script src='/javascript/deletesurvey.js'></script>

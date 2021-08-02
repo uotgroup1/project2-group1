@@ -10,10 +10,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Gowun Batang', serif;
     background-color: var(--primary-grey);
     /* margin-bottom: 60px; */
 }

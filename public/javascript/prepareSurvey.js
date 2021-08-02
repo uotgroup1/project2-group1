@@ -9,7 +9,13 @@ async function newSurveyHandler(event) {
   const Option2 = document.querySelector('#optiontwo').value.trim();
   const Option3 = document.querySelector('#optionthree').value.trim();
   const Option4 = document.querySelector('#optionfour').value.trim();
-  console.log(Option1, Option2);
+  
+  if (!newSurveyName || !newSurveyQuestion || !Option1
+    || !Option2|| !Option3|| !Option4) {
+    alert("Please fill empty Field")
+    return
+  }
+  
   const response = await fetch('/api/survey', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

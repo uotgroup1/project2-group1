@@ -14,6 +14,7 @@ async function newUpdateHandler(event) {
   const Option2 = document.querySelector('#optiontwo').value;
   const Option3 = document.querySelector('#optionthree').value;
   const Option4 = document.querySelector('#optionfour').value;
+  
 
   document.location.replace('/dashboard');
   // } else {

@@ -1,5 +1,4 @@
 const Survey = require('./Survey');
-const Questions = require('./Questions');
 const Users = require('./Users');
 const Answers = require('./Answers');
 
@@ -18,25 +17,9 @@ Answers.belongsTo(Survey, {
 Survey.hasMany(Answers, {
   foreignKey: 'survey_id',
 });
-// Survey.hasMany(Questions, {
-//   foreignKey: 'survey_id',
-// });
-
-// Questions.belongsTo(Survey, {
-//   foreignKey: 'survey_id',
-// });
-
-// Questions.hasMany(Answers, {
-//   foreignKey: 'question_id',
-// });
-
-// Answers.belongsTo(Questions, {
-//   foreignKey: 'question_id',
-// });
 
 module.exports = {
   Survey,
-  Questions,
   Users,
   Answers
 };

@@ -7,21 +7,19 @@ ___
 * [Usage](#usage)
 * [Links](#links)
 * [Tools](#tools)
-* [Tests](#tests)
 * [Credits](#credits)
 * [License](#license)
 * [User Story](#user-story)
 ___
 
 ## Links
-* [Deployed App](herokulink)
+* [Deployed App](https://obscure-river-98687.herokuapp.com/)
 
 ___
 
 ## Usage
 This application allows all users to view and take the surveys. Only those logged in (or if they sign up) will to be able to create, edit, and delete their surveys. Once logged in, they can view their dashboard to see their surveys.
 
-![screenshotHere](/assets/images/)
 ___
 
 
@@ -38,10 +36,6 @@ ___
 * express-session
 * HTML & CSS
 * UUID
-___
-
-## Tests
-What tests were used, if any?
 ___
 
 ## Credits

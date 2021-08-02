@@ -14,14 +14,14 @@ ___
 ___
 
 ## Links
-* [Deployed App](herokulink)
+* [Survey Donkey Deployed App](https://obscure-river-98687.herokuapp.com/)
 
 ___
 
 ## Usage
 This application allows all users to view and take the surveys. Only those logged in (or if they sign up) will to be able to create, edit, and delete their surveys. Once logged in, they can view their dashboard to see their surveys.
 
-![screenshotHere](/assets/images/)
+![screenshotHere](./public/assets/images/ss_SurvDonk_homepage.png)
 ___
 
 

@@ -16,15 +16,7 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
-});
+
 router.get('/:id', (req, res) => {
   Users.findOne({
     attributes: { exclude: ['password'] },
@@ -61,6 +53,7 @@ router.get('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 router.post('/', (req, res) => {
   console.log('*********posting user', req.body);
   Users.create({
@@ -75,6 +68,7 @@ router.post('/', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 router.post('/login', (req, res) => {
   console.log(req.body);
   Users.findOne({
@@ -99,9 +93,20 @@ router.post('/login', (req, res) => {
       req.session.user_id = Data.id;
       req.session.username = Data.user_name;
       req.session.loggedIn = true;
+
       res.status(200).json({ user: Data, message: 'You are now logged in!' });
     });
   });
+});
+
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 router.put('/:id', (req, res) => {

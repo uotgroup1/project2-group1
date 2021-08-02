@@ -7,7 +7,7 @@
         {{#each surveys as |survey|}}
           <div class="survey-box">
             <p> {{survey.id}}: <span> {{survey.newSurveyName}}</span></p>
-             <a href="/view/{{survey.id}}"><i class="material-icons-sharp">play_arrow</i> START</a>
+             <a href="/view/{{survey.id}}" class="btn btn-light"><i class="material-icons-sharp">play_arrow</i> START</a>
             {{!-- <button id="start-btn" onclick="/takesurvey/{{survey.id}}">START</button> --}}
           </div>
         {{/each}}
@@ -54,6 +54,12 @@
             <div>
               <button type="submit" id="signup-btn">SIGN UP</button>
             </div>
+          </form>
+        </section>
+      {{else}}
+        <section class="signup-sec">
+          <form class="signup-form">
+            <p>Go to dashboard to create Survey!!!</p>
           </form>
         </section>
       {{/unless}}

@@ -6,26 +6,25 @@
         <div class="row new-survey-box">
             <form class="col-8 new-survey-form">
                 <label for="surv-name">Enter your survey name: </label>
-                <input type="text" name="surv-name" id="surv-name" class="form-input" />
+                <input type="text" name="surv-name" id="surv-name" class="form-control" />
                 <label for="question">Question:</label>
-                <textarea name="question" id="question" class="form-input"></textarea>
+                <textarea name="question" id="question" class="form-control"></textarea>
                 <label for="option">Option 1: </label>
-                <input type="text" name="option" id="optionone" class="form-input" />
+                <input type="text" name="option" id="optionone" class="form-control" />
                 <label for="option">Option 2: </label>
-                <input type="text" name="option" id="optiontwo" class="form-input" />
+                <input type="text" name="option" id="optiontwo" class="form-control" />
                 <label for="option">Option 3: </label>
-                <input type="text" name="option" id="optionthree" class="form-input" />
+                <input type="text" name="option" id="optionthree" class="form-control" />
                 <label for="option">Option 4: </label>
-                <input type="text" name="option" id="optionfour" class="form-input" />
+                <input type="text" name="option" id="optionfour" class="form-control" />
             </form>
-            <div class="col-4 next-steps">
-                <h3>Click below to Save Survey</h3>
+            <div class="col-4">
                 <br>
                 {{!-- <button class="addQuestion" id="add-quest-btn">Add Question</button>
                 <button id="addOpt-btn">Add Option</button> --}} 
-                <button type="submit" id="save-surv-btn">Save Survey</button>
+                <button type="submit" id="save-surv-btn" class="btn-warning btn""><i class="material-icons-sharp">save</i> Save Survey</button>
             </div>
-        </div>
+        </div>  
     </div>
 </section>
 <br />

@@ -22,7 +22,7 @@ async function loginSurveyHandler(event) {
 
     if (response.ok) {
       //if the response is ok go to this url otherwise send a alert to browser
-      document.location.replace('dashboard'); // need to confirm this with html routes
+      document.location.replace('login'); // need to confirm this with html routes
     } else {
       alert(response.statusText);
     }

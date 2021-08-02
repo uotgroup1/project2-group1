@@ -1,8 +1,8 @@
 :root {
-    --primary-grey: #c9c9c8;
+    --primary-grey: white;
     --secondary-orange: #ef8b69;
-    --tertiary-dgrey: #3f3f3f;
-    --fourth-pewterBlue: #8ba6a9;
+    --tertiary-dgrey: #13145c;
+    --fourth-pewterBlue: #837caf;
     --fifth-white: #fbf7fc;
 }
 
@@ -11,11 +11,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-/* html {
-    position: relative;
-    min-height: 100%;
-} */
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -89,7 +84,7 @@ header img {
     flex: wrap;
     background-color: var(--fourth-pewterBlue);
     color:var(--fifth-white);
-    padding: 2%;
+    padding: 1%;
     margin-bottom: 10px;
     box-shadow: 1px 1px 3px var(--tertiary-dgrey);
 }
@@ -232,7 +227,7 @@ form label {
 }
 
 .next-steps {
-    border-left: solid 5px var(--fifth-white);
+    border-left: solid 1px var(--fifth-white);
     padding-left: 5%;
     text-align: center;
 }
@@ -277,7 +272,9 @@ form label {
     color: var(--tertiary-dgrey);
 }
 /* MAIN STYLES END */
-
+.btn-light {
+    margin:2px;
+}
 
 /* FOOTER STYLE START */
 footer {

@@ -46,7 +46,7 @@ ___
 
 ## Credits
 * Completed by: 
-    * [Farnoush Yousefi](https://github.com/FarnoushYousefi
+    * [Farnoush Yousefi](https://github.com/FarnoushYousefi)
     * [Zohaib Ali](https://github.com/szali3)
     * [Shannon Nell](https://github.com/ShannonNell)
     * [Mayuran](https://github.com/mayuranswee23)
